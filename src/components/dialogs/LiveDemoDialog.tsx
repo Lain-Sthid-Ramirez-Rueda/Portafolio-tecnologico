@@ -44,6 +44,7 @@ function DemoBody({ demo }: { demo: Demo }) {
         title="Demo en vivo de ProAssist"
         loading="lazy"
         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+        allow="microphone"
         src={src}
         style={{ opacity: loading ? 0 : 1, transition: 'opacity 0.5s' }}
         onLoad={() => setLoading(false)}
