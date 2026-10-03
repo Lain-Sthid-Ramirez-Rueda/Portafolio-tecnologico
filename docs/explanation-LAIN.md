@@ -323,3 +323,14 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
     **Resultado en tu web publicada:** celular 93–96 (antes 65) y computador 100 (antes 89), con accesibilidad, buenas prácticas y SEO en 100 en todas las corridas. En celular, el "tiempo bloqueado" quedó en 0 ms y los saltos de diseño en 0. Lo único que no llega a 100 es el tiempo de la primera pintura, que depende de la red lenta que simula la prueba. La herramienta pública de PageSpeed no me dejó hacer más pruebas hoy porque se acabó su límite gratis, así que medí con el mismo motor en mi máquina. Cuando se publique, lo ideal es confirmarlo en pagespeed.web.dev.
 
     **LinkedIn: no pude leerlo.** LinkedIn bloquea a cualquiera que no haya iniciado sesión y la extensión de Chrome no estaba conectada. Para aplicar mejoras con base en tu perfil necesito que me pegues el texto (titular, "Acerca de", experiencia, educación, licencias y certificaciones, aptitudes).
+
+35. **El botón de correo ahora sí abre un mensaje listo para escribir (Fase 20):**
+
+    Antes, el botón usaba un enlace `mailto:`, que le pide al computador abrir "el programa de correo predeterminado". La mayoría de la gente usa Gmail en el navegador y no tiene ese programa configurado, así que al hacer clic no pasaba nada.
+
+    **Ahora:**
+    - **En computador** se abre una pestaña de **Gmail con un mensaje nuevo** que ya trae tu correo como destinatario, el asunto "Contacto desde tu portafolio" y un saludo inicial. Si la persona no ha iniciado sesión en Gmail, primero le pide entrar y luego la lleva directo al mensaje.
+    - **En celular** se sigue abriendo la app de correo del teléfono (Gmail, Outlook, etc.), que ahí sí funciona bien, y ahora también con el asunto y el saludo ya escritos.
+    - El botón de **copiar correo** sigue disponible para quien prefiera otro servicio.
+
+    Lo probé en un Chrome real simulando un computador con mouse: al hacer clic se abrió Gmail con el mensaje prellenado.

@@ -1,7 +1,25 @@
+import type { MouseEvent } from 'react';
 import { useLang } from '../../i18n/LangContext';
 import { TransBreak } from '../../i18n/TransBreak';
 import { useReveal } from '../../hooks/useReveal';
 import { useClipboardCopy } from '../../hooks/useClipboardCopy';
+
+const EMAIL = 'lainramirez18@gmail.com';
+const EMAIL_SUBJECT = 'Contacto desde tu portafolio';
+const EMAIL_BODY = 'Hola Lain, buen día.\n\n';
+const MAILTO_URL = `mailto:${EMAIL}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+const GMAIL_COMPOSE_URL =
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}` +
+  `&su=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+
+/** `mailto:` silently does nothing on desktops with no mail app configured (most people use
+ *  webmail), so on mouse/trackpad devices open Gmail's compose window pre-filled instead.
+ *  Touch devices keep `mailto:`, which reliably opens the phone's mail app. */
+function openEmailComposer(e: MouseEvent<HTMLAnchorElement>) {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  e.preventDefault();
+  window.open(GMAIL_COMPOSE_URL, '_blank', 'noopener,noreferrer');
+}
 
 export function Contact() {
   const { t } = useLang();
@@ -52,15 +70,15 @@ export function Contact() {
                 <div className="clc-icon clc-icon--email">
                   <i className="fa-solid fa-envelope" aria-hidden="true" />
                 </div>
-                <a href="mailto:lainramirez18@gmail.com" className="clc-body" aria-label="Enviar email">
+                <a href={MAILTO_URL} className="clc-body" aria-label="Enviar email" onClick={openEmailComposer}>
                   <span className="clc-label">Email</span>
-                  <span className="clc-sub">lainramirez18@gmail.com</span>
+                  <span className="clc-sub">{EMAIL}</span>
                 </a>
                 <button
                   className="clc-copy-btn"
                   aria-label={t('aria.copy_email')}
                   title="Copiar correo"
-                  onClick={() => copy('lainramirez18@gmail.com')}
+                  onClick={() => copy(EMAIL)}
                 >
                   <i className="fa-regular fa-copy" aria-hidden="true" />
                 </button>
