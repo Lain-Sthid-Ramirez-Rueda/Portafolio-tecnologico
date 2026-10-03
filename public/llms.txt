@@ -12,14 +12,14 @@
 - Áreas: Python, HTML, CSS, Prompt Engineering, Automatización con IA, Diseño UI/UX,
   Elicitación de Requisitos, Git, Docker, Groq API, Claude AI, Gemini.
 - Contacto: lainramirez18@gmail.com · https://wa.me/573209735859
-- GitHub: https://github.com/Lain-ramirez18
+- GitHub: https://github.com/Lain-Sthid-Ramirez-Rueda
 - LinkedIn: https://www.linkedin.com/in/lain-sthid-ramirez-rueda
 
 ## Secciones (https://lainramirez.vercel.app/)
 - [Inicio](https://lainramirez.vercel.app/#hero): presentación, botones de descarga de CV (ES/EN) y contacto directo por WhatsApp.
 - [Sobre mí](https://lainramirez.vercel.app/#about): trayectoria, certificaciones y diplomados.
 - [Habilidades](https://lainramirez.vercel.app/#skills): lenguajes, herramientas, IA y automatización, habilidades blandas.
-- [Proyectos](https://lainramirez.vercel.app/#projects): APPFOCUS (terminal de productividad offline-first) y ProAssist (chatbot de IA bilingüe sobre LLaMA 3.3-70B sirviendo por Groq, contenerizado con Docker en Render).
+- [Proyectos](https://lainramirez.vercel.app/#projects): Sitio oficial del Congreso Virtual de Redes de Conocimiento 2026 del SENA (https://congreso-sena.vercel.app — React 19, TanStack Start, Supabase), APPFOCUS (terminal de productividad offline-first) y ProAssist (chatbot de IA bilingüe sobre LLaMA 3.3-70B sirviendo por Groq, contenerizado con Docker en Render).
 - [Contacto](https://lainramirez.vercel.app/#contact): formulario de contacto y enlaces directos (email, WhatsApp, LinkedIn, GitHub).
 
 ## Notas para agentes

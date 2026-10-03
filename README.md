@@ -37,4 +37,4 @@ npm run lint         # ESLint
 Puedes ver el portafolio en vivo aquí: [lainramirez.vercel.app](https://lainramirez.vercel.app/)
 
 ---
-Diseñado y desarrollado por [Lain Sthid Ramirez Rueda](https://github.com/Lain-ramirez18).
+Diseñado y desarrollado por [Lain Sthid Ramirez Rueda](https://github.com/Lain-Sthid-Ramirez-Rueda).

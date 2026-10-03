@@ -88,14 +88,14 @@ export function Contact() {
                   <i className="fa-brands fa-github" aria-hidden="true" />
                 </div>
                 <a
-                  href="https://github.com/Lain-ramirez18"
+                  href="https://github.com/Lain-Sthid-Ramirez-Rueda"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="clc-body"
                   aria-label="Ver perfil de GitHub"
                 >
                   <span className="clc-label">GitHub</span>
-                  <span className="clc-sub">Lain-ramirez18</span>
+                  <span className="clc-sub">Lain-Sthid-Ramirez-Rueda</span>
                 </a>
                 <i className="fa-solid fa-arrow-up-right-from-square clc-arrow" aria-hidden="true" />
               </div>

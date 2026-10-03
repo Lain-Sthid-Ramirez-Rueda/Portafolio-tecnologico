@@ -36,7 +36,7 @@ function ProjectCard({ project, delay }: { project: (typeof projects)[number]; d
               <span>{t('proj.view_details')}</span>
             </button>
             <a
-              href="https://github.com/Lain-ramirez18"
+              href="https://github.com/Lain-Sthid-Ramirez-Rueda"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost btn-sm"

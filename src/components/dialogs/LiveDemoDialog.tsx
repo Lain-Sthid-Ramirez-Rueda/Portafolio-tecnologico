@@ -41,7 +41,7 @@ function DemoBody({ demo }: { demo: Demo }) {
       <iframe
         id="demo-iframe"
         className="demo-iframe"
-        title="Demo en vivo de ProAssist"
+        title={`Demo en vivo: ${demo.title}`}
         loading="lazy"
         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
         allow="microphone"

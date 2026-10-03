@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lain-ramirez18/Portafolio-tecnologico.git"
+    "url": "git+https://github.com/Lain-Sthid-Ramirez-Rueda/Portafolio-tecnologico.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lain-ramirez18/Portafolio-tecnologico/issues"
+    "url": "https://github.com/Lain-Sthid-Ramirez-Rueda/Portafolio-tecnologico/issues"
   },
-  "homepage": "https://github.com/Lain-ramirez18/Portafolio-tecnologico#readme",
+  "homepage": "https://github.com/Lain-Sthid-Ramirez-Rueda/Portafolio-tecnologico#readme",
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8"

@@ -21,6 +21,22 @@ describe('App', () => {
     expect(document.getElementById('contact')).toBeInTheDocument();
   });
 
+  it('lists the SENA Congress 2026 site as a project with a live demo', () => {
+    render(<App />);
+    const projects = document.getElementById('projects')!;
+    expect(within(projects).getByRole('heading', { name: 'Congreso SENA 2026' })).toBeInTheDocument();
+    expect(within(projects).getByRole('button', { name: 'Probar demo de Congreso SENA 2026 en vivo' })).toBeInTheDocument();
+  });
+
+  it('links GitHub only under the current username', () => {
+    render(<App />);
+    const githubLinks = [...document.querySelectorAll<HTMLAnchorElement>('a[href*="github.com"]')];
+    expect(githubLinks.length).toBeGreaterThan(0);
+    for (const link of githubLinks) {
+      expect(link.href).toMatch(/^https:\/\/github\.com\/Lain-Sthid-Ramirez-Rueda(\/|$)/);
+    }
+  });
+
   it('renders the footer with the current year', () => {
     render(<App />);
     const footer = screen.getByRole('contentinfo');

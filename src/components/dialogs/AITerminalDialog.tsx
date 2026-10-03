@@ -11,7 +11,7 @@ const COMMANDS: Record<string, () => string> = {
     'Frontend: HTML5, CSS3 (MD3), JS ES6+\nBackend: Python, Git/GitHub, Docker\nIA: Subagentes IA, Claude, Groq/LLaMA, Gemini, Prompt Engineering',
   projects: () =>
     '1. APPFOCUS CORE v3.0 (Offline Productivity Terminal)\n2. ProAssist (Bilingual LLaMA 3.3-70B + Groq AI Chatbot)\n3. Próximo Proyecto (AI Autonomous Subagents Sandbox)',
-  contact: () => 'WhatsApp: +57 3209735859\nEmail: lainramirez18@gmail.com\nLinkedIn: lain-sthid-ramirez-rueda\nGitHub: Lain-ramirez18',
+  contact: () => 'WhatsApp: +57 3209735859\nEmail: lainramirez18@gmail.com\nLinkedIn: lain-sthid-ramirez-rueda\nGitHub: Lain-Sthid-Ramirez-Rueda',
   ai: () => '🤖 AI Sub-Agent Status: Online (Groq + LLaMA 3.3-70B API connected). Ready for prompt orchestration.',
   date: () => `Fecha actual: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
   whoami: () => 'visitor@lsrr-portfolio-guest',

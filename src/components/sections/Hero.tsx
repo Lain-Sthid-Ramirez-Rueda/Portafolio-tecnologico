@@ -87,7 +87,7 @@ export function Hero() {
 
           <div className="hero-socials" role="group" aria-label="Redes sociales">
             <a
-              href="https://github.com/Lain-ramirez18"
+              href="https://github.com/Lain-Sthid-Ramirez-Rueda"
               target="_blank"
               rel="noopener noreferrer"
               className="social-chip"

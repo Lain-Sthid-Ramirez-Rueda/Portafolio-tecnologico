@@ -17,7 +17,7 @@ export interface DetailLink {
 }
 
 export interface Project {
-  id: 'appfocus' | 'proassist' | 'upcoming';
+  id: 'congreso' | 'appfocus' | 'proassist' | 'upcoming';
   number: string;
   upcoming?: boolean;
   title: string;
@@ -36,13 +36,62 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'appfocus',
+    id: 'congreso',
     number: '01',
+    title: 'Congreso SENA 2026',
+    descKey: 'proj.congreso.desc',
+    stack: ['React 19', 'TypeScript', 'TanStack Start', 'Tailwind', 'Supabase', 'Vercel'],
+    demoUrl: 'https://congreso-sena.vercel.app',
+    demoTitle: 'Congreso Virtual de Redes de Conocimiento 2026 — SENA',
+    detail: {
+      title: 'Congreso Virtual de Redes de Conocimiento 2026 — Sitio Oficial SENA',
+      blocks: [
+        {
+          type: 'paragraph',
+          title: 'Resumen del Proyecto',
+          text: 'Sitio web oficial del Congreso Virtual de Redes de Conocimiento 2026: Innovación y Transferencia, organizado por el Centro de Gestión de Mercados, Logística y TIC del SENA (26, 27 y 28 de octubre de 2026). Es el canal principal de consulta para aprendices, instructores e investigadores: programación, redes de conocimiento, modalidades de participación, ponencias, pósteres y publicaciones.',
+        },
+        {
+          type: 'list',
+          title: 'Aspectos Técnicos Clave',
+          items: [
+            {
+              label: 'SSR con TanStack Start:',
+              text: 'React 19 + TypeScript sobre TanStack Router con renderizado en servidor, desplegado en Vercel.',
+            },
+            {
+              label: 'Votación de Pósteres en Vivo:',
+              text: 'Sistema de votación y podio en tiempo real respaldado por Supabase (PostgreSQL).',
+            },
+            {
+              label: 'Identidad Institucional y Accesibilidad:',
+              text: 'Manual de marca SENA 2024, contraste WCAG AAA, menú de accesibilidad, navegación por teclado y bilingüe ES/EN.',
+            },
+            {
+              label: 'SEO y Documentos:',
+              text: 'Datos estructurados schema.org/Event, Open Graph, sitemap XML y visor PDF integrado para cronograma, ponencias y pósteres.',
+            },
+          ],
+        },
+      ],
+      links: [
+        {
+          href: 'https://congreso-sena.vercel.app',
+          label: 'Sitio Oficial (Vercel)',
+          icon: 'fa-solid fa-arrow-up-right-from-square',
+          variant: 'primary',
+        },
+      ],
+    },
+  },
+  {
+    id: 'appfocus',
+    number: '02',
     title: 'APPFOCUS',
     version: 'CORE v3.0',
     descKey: 'proj.appfocus.desc',
     stack: ['JavaScript', 'Tailwind', 'Deep Work', 'Offline-First'],
-    githubUrl: 'https://github.com/Lain-ramirez18/APPFOCUS',
+    githubUrl: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
     detail: {
       title: 'APPFOCUS CORE v3.0 — Deep Work Terminal',
       blocks: [
@@ -72,7 +121,7 @@ export const projects: Project[] = [
       ],
       links: [
         {
-          href: 'https://github.com/Lain-ramirez18/APPFOCUS',
+          href: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
           label: 'Repositorio GitHub',
           icon: 'fa-brands fa-github',
           variant: 'primary',
@@ -82,11 +131,11 @@ export const projects: Project[] = [
   },
   {
     id: 'proassist',
-    number: '02',
+    number: '03',
     title: 'ProAssist',
     descKey: 'proj.proassist.desc',
     stack: ['Python', 'Groq API', 'Docker', 'Render'],
-    githubUrl: 'https://github.com/Lain-ramirez18/proassist',
+    githubUrl: 'https://github.com/Lain-Sthid-Ramirez-Rueda/proassist',
     demoUrl: 'https://proassist-r1q6.onrender.com',
     demoTitle: 'ProAssist — AI Chatbot',
     detail: {
@@ -124,7 +173,7 @@ export const projects: Project[] = [
           variant: 'primary',
         },
         {
-          href: 'https://github.com/Lain-ramirez18/proassist',
+          href: 'https://github.com/Lain-Sthid-Ramirez-Rueda/proassist',
           label: 'Código en GitHub',
           icon: 'fa-brands fa-github',
           variant: 'ghost',
@@ -134,7 +183,7 @@ export const projects: Project[] = [
   },
   {
     id: 'upcoming',
-    number: '03',
+    number: '04',
     upcoming: true,
     title: '',
     descKey: 'proj.upcoming.desc',
@@ -150,7 +199,7 @@ export const projects: Project[] = [
       ],
       links: [
         {
-          href: 'https://github.com/Lain-ramirez18',
+          href: 'https://github.com/Lain-Sthid-Ramirez-Rueda',
           label: 'Perfil de GitHub',
           icon: 'fa-brands fa-github',
           variant: 'primary',

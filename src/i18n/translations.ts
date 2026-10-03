@@ -85,6 +85,8 @@ export const translations = {
     'projects.label': 'Proyectos',
     'projects.title': 'Lo que he construido',
     'proj.view_details': 'Ver detalles',
+    'proj.congreso.desc':
+      'Sitio web oficial del Congreso Virtual de Redes de Conocimiento 2026 del SENA. Programación, ponencias, pósteres con votación en vivo, visor PDF y diseño institucional bilingüe con accesibilidad WCAG AAA.',
     'proj.appfocus.desc':
       'Terminal de productividad de alto rendimiento basado en la metodología Deep Work. Algoritmo de eficiencia dinámica, arquitectura 100% offline y experiencia sin distracciones para maximizar el foco cognitivo.',
     'proj.proassist.desc':
@@ -212,6 +214,8 @@ export const translations = {
     'projects.label': 'Projects',
     'projects.title': 'What I have built',
     'proj.view_details': 'View details',
+    'proj.congreso.desc':
+      'Official website of SENA’s 2026 Virtual Knowledge Networks Congress. Schedule, papers, posters with live voting, built-in PDF viewer, and bilingual institutional design with WCAG AAA accessibility.',
     'proj.appfocus.desc':
       'High-performance productivity terminal based on Deep Work methodology. Dynamic efficiency algorithm, 100% offline architecture, and distraction-free cognitive focus experience.',
     'proj.proassist.desc':

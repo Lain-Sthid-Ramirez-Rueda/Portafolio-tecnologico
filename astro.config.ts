@@ -16,7 +16,15 @@ function obfuscatePlugin(): Plugin {
     generateBundle(_options, bundle) {
       if (process.env.SKIP_OBFUSCATION === '1') return;
       for (const file of Object.values(bundle)) {
-        if (file.type === 'chunk' && file.fileName.endsWith('.js')) {
+        /* Vendor-only chunks (react-dom, react, workbox) are public open-source code — obfuscating
+         * them protects nothing, yet it more than doubled react-dom (184KB → 422KB) and its
+         * base64 string-array decoding added ~1.5s of mobile Total Blocking Time in Lighthouse.
+         * Only chunks containing at least one of our own modules are obfuscated. */
+        const isVendorOnly =
+          file.type === 'chunk' &&
+          file.moduleIds.length > 0 &&
+          file.moduleIds.every((id) => id.includes('/node_modules/') || id.startsWith('\0'));
+        if (file.type === 'chunk' && file.fileName.endsWith('.js') && !isVendorOnly) {
           const result = JavaScriptObfuscator.obfuscate(file.code, {
             compact: true,
             /* `stringArray`'s runtime needs a reference to the global object, and by default gets
@@ -78,8 +86,20 @@ function obfuscatePlugin(): Plugin {
 
 export default defineConfig({
   output: 'static',
+  /* Single-page site: inlining the one stylesheet removes the render-blocking CSS round trip that
+   * Lighthouse measured at ~1.1s of mobile FCP/LCP delay. style-src already allows inline styles. */
+  build: { inlineStylesheets: 'always' },
   integrations: [
     react(),
+    {
+      // `client:intent` — see src/directives/intent.ts
+      name: 'client-intent-directive',
+      hooks: {
+        'astro:config:setup': ({ addClientDirective }) => {
+          addClientDirective({ name: 'intent', entrypoint: './src/directives/intent.ts' });
+        },
+      },
+    },
     AstroPWA({
       registerType: 'autoUpdate',
       injectRegister: false,
