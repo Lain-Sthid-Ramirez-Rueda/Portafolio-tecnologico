@@ -131,6 +131,9 @@ import { App } from '../App';
          (avif) — preloading .webp here while the browser loads .avif meant the preload went
          entirely unused, flagged by Lighthouse ("preloaded but not used within a few seconds"). -->
     <link rel="preload" href="/assets/img/profile.avif" as="image" fetchpriority="high" type="image/avif" />
+    <!-- The LCP element (hero name) is set in Space Grotesk: preloading it lets the swap to the web
+         font happen before the LCP candidate is finalized instead of after the CSS is parsed. -->
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.vercel-insights.com" />
     <!-- Space Mono / DM Sans / Space Grotesk and Font Awesome are both self-hosted subsets
          (src/styles/fonts.css, src/styles/fontawesome.css, bundled via global.css) — no
