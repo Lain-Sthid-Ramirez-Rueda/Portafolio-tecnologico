@@ -348,3 +348,20 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
       - **Próximo Proyecto** incluye un panel de control de orquestación de subagentes de IA en Python con los estados de los agentes (Requisitos, Análisis y Documentación).
     - **Uso táctil perfecto en celulares:** en teléfonos, un escudo inteligente evita que al deslizar el dedo hacia abajo la pantalla se quede "atrapada" dentro del demo. Con un toque se activa para navegarlo libremente. En computador con mouse, la interacción es directa e instantánea.
     - **Accesibilidad y modo claro:** cumple el estándar más exigente de contraste WCAG AAA en modo oscuro y claro, soporte bilingüe (español/inglés) y navegación por teclado.
+
+37. **ProAssist en segunda posición y pantallas con efecto borroso y botón "Ver aquí" (Fase 22):**
+
+    **Lo que me pediste:**
+    1. Colocar de segundas a **ProAssist** (orden de proyectos: 01 Congreso SENA, 02 ProAssist, 03 APPFOCUS, 04 Próximo Proyecto).
+    2. Colocar las pantallas de los proyectos con un efecto borroso ("pantallas borrosas") y un botón que diga **"Ver aquí"** (o en inglés "View here"), y que al darle clic se abra la experiencia en grande en un modal (igual que en la demo).
+
+    **Cómo quedó construido:**
+    - **Nuevo orden de proyectos:** ProAssist ahora es el proyecto 02, justo al lado de Congreso SENA 2026. La cuadrícula de 2 columnas muestra en la primera fila tus dos proyectos estelares con demo en vivo.
+    - **Pantallas borrosas con cristal esmerilado (`backdrop-filter: blur`):** cada ventana de proyecto muestra su aplicación o simulador suavemente difuminado bajo una capa de cristal translúcido muy elegante.
+    - **Botón centrado y brillante "Ver aquí":** en el corazón de cada pantalla aparece un botón en color turquesa neón con sombra luminosa:
+      - **En Congreso SENA 2026 y ProAssist:** el botón muestra `[ ▶ Ver aquí ]` y abajo el texto guía *"Probar demo interactiva"*. Al hacer clic, **se abre la demo completa en pantalla grande** (el modal con su navegador interactivo y botón de pantalla completa). La demo ya se carga en segundo plano sin ralentizar la página, así que al abrir el modal la experiencia es súper fluida.
+      - **En APPFOCUS:** el botón muestra `[ 👁 Ver aquí ]` y abajo *"Ver detalles del proyecto"*. Al hacer clic, se abre el modal con toda la información técnica, métricas de rendimiento y enlaces a GitHub.
+      - **En Próximo Proyecto (Orquestador IA):** el botón `[ 👁 Ver aquí ]` abre la ficha con la visión y hoja de ruta de los subagentes autónomos.
+    - **Cero problemas táctiles en celulares:** gracias a la capa de cristal borroso que cubre la ventana, cuando estás en el celular y deslizas el dedo hacia abajo por la pantalla, el dedo nunca se "traba" dentro de los iframes. Deslizas con total suavidad.
+    - **100% en PageSpeed conservado:** el código estático de Astro y la carga diferida por sensor de movimiento se mantienen al 100%. No hay saltos de diseño, no hay scripts innecesarios y las pruebas automáticas pasan 13 de 13 con 0 errores.
+

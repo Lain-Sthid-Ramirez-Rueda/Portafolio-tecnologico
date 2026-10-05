@@ -10,7 +10,6 @@ function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
   const [shouldLoad, setShouldLoad] = useState(() => typeof IntersectionObserver === 'undefined');
   const [loaded, setLoaded] = useState(false);
   const [reloadKey, setReloadKey] = useState(0);
-  const [interactActive, setInteractActive] = useState(false);
   const frameRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
   const hostname = project.demoUrl ? new URL(project.demoUrl).hostname : '';
 
   return (
-    <div className="project-preview-frame" ref={frameRef}>
+    <div className="project-preview-frame" ref={frameRef} style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="demo-embed-titlebar">
         <div className="demo-browser-controls" aria-hidden="true">
           <span className="demo-dot demo-dot--red" />
@@ -89,7 +88,7 @@ function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
         </div>
       </div>
 
-      <div className="demo-embed-viewport">
+      <div className="demo-embed-viewport" style={{ position: 'relative' }}>
         {!loaded && (
           <div className="demo-embed-loading" id={`demo-loading-${project.id}`}>
             <div className="demo-loader-ring demo-loader-ring--sm" aria-hidden="true" />
@@ -102,27 +101,6 @@ function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
           </div>
         )}
 
-        {!interactActive && (
-          <div
-            className="demo-touch-shield"
-            onClick={() => setInteractActive(true)}
-            role="button"
-            tabIndex={0}
-            aria-label={`${t('demo.touch_hint')} con ${project.title}`}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                setInteractActive(true);
-              }
-            }}
-          >
-            <span className="demo-touch-pill">
-              <i className="fa-solid fa-hand-pointer" aria-hidden="true" />
-              <span>{t('demo.touch_hint')}</span>
-            </span>
-          </div>
-        )}
-
         {shouldLoad && (
           <iframe
             key={reloadKey}
@@ -132,25 +110,52 @@ function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
             loading="lazy"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             allow="microphone"
-            style={{ opacity: loaded ? 1 : 0 }}
+            style={{ opacity: loaded ? 0.75 : 0 }}
             onLoad={() => setLoaded(true)}
           />
         )}
+
+        {/* Glassmorphic overlay with CTA to open demo */}
+        <div className="demo-blur-overlay">
+          <div className="demo-blur-card">
+            <button
+              type="button"
+              className="btn-demo-open-here"
+              aria-label={`${t('demo.view_here_hint')}: ${project.title}`}
+              onClick={() => {
+                const url = project.demoUrl!;
+                if (window.innerWidth < 520) {
+                  window.open(url, '_blank', 'noopener,noreferrer');
+                  return;
+                }
+                openDemo({ url, title: project.demoTitle ?? project.title });
+              }}
+            >
+              <i className="fa-solid fa-play" aria-hidden="true" />
+              <span>{t('demo.view_here')}</span>
+            </button>
+            <span className="demo-blur-hint">{t('demo.view_here_hint')}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function AppFocusTerminalPreview({ project }: { project: (typeof projects)[number] }) {
+function AppFocusBlurPreview({ project }: { project: (typeof projects)[number] }) {
+  const { t } = useLang();
+  const { openProject } = useDialogs();
+
   return (
-    <div className="project-preview-frame">
+    <div className="project-preview-frame" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Browser titlebar */}
       <div className="demo-embed-titlebar">
         <div className="demo-browser-controls" aria-hidden="true">
           <span className="demo-dot demo-dot--red" />
           <span className="demo-dot demo-dot--yellow" />
           <span className="demo-dot demo-dot--green" />
         </div>
-        <div className="demo-embed-url" title="Terminal APPFOCUS CORE v3.0">
+        <div className="demo-embed-url" title="APPFOCUS CORE v3.0 — 100% OFFLINE">
           <i className="fa-solid fa-terminal" aria-hidden="true" />
           <span>appfocus-core-v3.0.sh</span>
         </div>
@@ -170,32 +175,42 @@ function AppFocusTerminalPreview({ project }: { project: (typeof projects)[numbe
           )}
         </div>
       </div>
-      <div className="demo-embed-viewport demo-terminal-viewport">
-        <div className="terminal-code-block" aria-label="Terminal interactiva de APPFOCUS">
-          <div className="term-line">
-            <span className="term-prompt">$</span>
-            <span className="term-cmd">appfocus --init --mode deep-work</span>
+
+      {/* Blurred skeleton — terminal-style mock */}
+      <div className="demo-embed-viewport" style={{ position: 'relative' }}>
+        <div className="demo-mock-preview">
+          <div className="demo-mock-header">
+            <div className="demo-mock-pill demo-mock-pill--primary" />
+            <div className="demo-mock-pill" />
           </div>
-          <div className="term-line term-dim">➜ [OK] Core v3.0 inicializado sin telemetría de red</div>
-          <div className="term-line">
-            <span className="term-accent">● Protocolo:</span>
-            <span className="term-txt">Deep Work (Cal Newport)</span>
+          <div className="demo-mock-lines">
+            <div className="demo-mock-line demo-mock-line--accent" />
+            <div className="demo-mock-line" />
+            <div className="demo-mock-line" />
+            <div className="demo-mock-line demo-mock-line--short" />
+            <div className="demo-mock-line demo-mock-line--accent" />
+            <div className="demo-mock-line" />
+            <div className="demo-mock-line demo-mock-line--short" />
           </div>
-          <div className="term-line">
-            <span className="term-accent">● Foco Dinámico:</span>
-            <span className="term-txt">50m concentración / 10m descanso</span>
+          <div className="demo-mock-grid">
+            <div className="demo-mock-box" />
+            <div className="demo-mock-box" />
           </div>
-          <div className="term-line">
-            <span className="term-accent">● Almacenamiento:</span>
-            <span className="term-txt">100% LocalStorage / IndexedDB</span>
-          </div>
-          <div className="term-line">
-            <span className="term-accent">● Rendimiento:</span>
-            <span className="term-txt">0 dependencias externas / 0 rastreadores</span>
-          </div>
-          <div className="term-line term-cursor-line">
-            <span className="term-prompt">$</span>
-            <span className="term-cursor" aria-hidden="true">▋</span>
+        </div>
+
+        {/* Glassmorphic overlay with CTA */}
+        <div className="demo-blur-overlay">
+          <div className="demo-blur-card">
+            <button
+              type="button"
+              className="btn-demo-open-here"
+              aria-label={`${t('demo.view_here_hint')}: ${project.title}`}
+              onClick={() => openProject(project.id)}
+            >
+              <i className="fa-solid fa-eye" aria-hidden="true" />
+              {t('demo.view_here')}
+            </button>
+            <span className="demo-blur-hint">{t('demo.view_here_hint')}</span>
           </div>
         </div>
       </div>
@@ -203,10 +218,13 @@ function AppFocusTerminalPreview({ project }: { project: (typeof projects)[numbe
   );
 }
 
-function UpcomingOrchestratorPreview() {
+function UpcomingBlurPreview() {
   const { t } = useLang();
+  const { openProject } = useDialogs();
+
   return (
-    <div className="project-preview-frame project-preview-frame--upcoming">
+    <div className="project-preview-frame project-preview-frame--upcoming" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Browser titlebar */}
       <div className="demo-embed-titlebar">
         <div className="demo-browser-controls" aria-hidden="true">
           <span className="demo-dot demo-dot--red" />
@@ -221,28 +239,39 @@ function UpcomingOrchestratorPreview() {
           <span className="upcoming-badge">{t('proj.upcoming_badge')}</span>
         </div>
       </div>
-      <div className="demo-embed-viewport demo-terminal-viewport">
-        <div className="terminal-code-block" aria-label="Pipeline de subagentes IA">
-          <div className="term-line">
-            <span className="term-prompt">&gt;</span>
-            <span className="term-cmd">python -m ai_agents.orchestrator --pool 3</span>
+
+      {/* Blurred skeleton — chat/AI mock */}
+      <div className="demo-embed-viewport" style={{ position: 'relative' }}>
+        <div className="demo-mock-preview">
+          <div className="demo-mock-header">
+            <div className="demo-mock-pill demo-mock-pill--sec" />
+            <div className="demo-mock-pill" />
           </div>
-          <div className="term-line term-dim">Ecosistema autónomo de subagentes de IA en desarrollo:</div>
-          <div className="term-line">
-            <span className="term-agent">[Subagente 01]</span>
-            <span className="term-txt">Elicitación de Requisitos ── [ACTIVO]</span>
+          <div className="demo-mock-chat">
+            <div className="demo-mock-bubble demo-mock-bubble--user" />
+            <div className="demo-mock-bubble demo-mock-bubble--bot" />
+            <div className="demo-mock-bubble demo-mock-bubble--user" />
+            <div className="demo-mock-bubble demo-mock-bubble--bot" />
           </div>
-          <div className="term-line">
-            <span className="term-agent">[Subagente 02]</span>
-            <span className="term-txt">Análisis de Datos y Flujos ── [EN PROCESO]</span>
+          <div className="demo-mock-lines" style={{ marginTop: '0.5rem' }}>
+            <div className="demo-mock-line demo-mock-line--accent" />
+            <div className="demo-mock-line demo-mock-line--short" />
           </div>
-          <div className="term-line">
-            <span className="term-agent">[Subagente 03]</span>
-            <span className="term-txt">Generación de Documentación ── [EN COLA]</span>
-          </div>
-          <div className="term-line term-cursor-line">
-            <span className="term-prompt">&gt;</span>
-            <span className="term-cursor" aria-hidden="true">▋</span>
+        </div>
+
+        {/* Glassmorphic overlay with CTA */}
+        <div className="demo-blur-overlay">
+          <div className="demo-blur-card">
+            <button
+              type="button"
+              className="btn-demo-open-here"
+              aria-label={`${t('demo.view_here_hint')}: Orquestador IA`}
+              onClick={() => openProject('upcoming')}
+            >
+              <i className="fa-solid fa-eye" aria-hidden="true" />
+              {t('demo.view_here')}
+            </button>
+            <span className="demo-blur-hint">{t('demo.view_here_hint')}</span>
           </div>
         </div>
       </div>
@@ -269,7 +298,7 @@ function ProjectCard({ project, delay }: { project: (typeof projects)[number]; d
           <span className="upcoming-badge">{t('proj.upcoming_badge')}</span>
         </div>
 
-        <UpcomingOrchestratorPreview />
+        <UpcomingBlurPreview />
 
         <div className="project-body">
           <h3 id="proj-next-title" className="project-title">
@@ -356,7 +385,7 @@ function ProjectCard({ project, delay }: { project: (typeof projects)[number]; d
       {project.demoUrl ? (
         <ProjectDemoEmbed project={project} />
       ) : project.id === 'appfocus' ? (
-        <AppFocusTerminalPreview project={project} />
+        <AppFocusBlurPreview project={project} />
       ) : null}
 
       <div className="project-body">

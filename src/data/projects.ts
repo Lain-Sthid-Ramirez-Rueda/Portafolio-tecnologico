@@ -85,53 +85,8 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 'appfocus',
-    number: '02',
-    title: 'APPFOCUS',
-    version: 'CORE v3.0',
-    descKey: 'proj.appfocus.desc',
-    stack: ['JavaScript', 'Tailwind', 'Deep Work', 'Offline-First'],
-    githubUrl: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
-    detail: {
-      title: 'APPFOCUS CORE v3.0 — Deep Work Terminal',
-      blocks: [
-        {
-          type: 'paragraph',
-          title: 'Resumen del Proyecto',
-          text: 'APPFOCUS es una terminal de productividad de alto rendimiento concebida bajo los principios de la metodología Deep Work de Cal Newport. Su propósito es eliminar fricciones cognitivas durante sesiones de trabajo concentrado.',
-        },
-        {
-          type: 'list',
-          title: 'Aspectos Técnicos Clave',
-          items: [
-            {
-              label: 'Arquitectura 100% Offline-First:',
-              text: 'Sin dependencias de red externas ni rastreadores. Todos los datos permanecen locales.',
-            },
-            {
-              label: 'Algoritmo de Foco Dinámico:',
-              text: 'Ajuste automático de bloques de trabajo e intervalos de descanso según ritmo circadiano.',
-            },
-            {
-              label: 'Estética Minimalista:',
-              text: 'UI construida con Tailwind CSS y Vanilla JavaScript altamente optimizado.',
-            },
-          ],
-        },
-      ],
-      links: [
-        {
-          href: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
-          label: 'Repositorio GitHub',
-          icon: 'fa-brands fa-github',
-          variant: 'primary',
-        },
-      ],
-    },
-  },
-  {
     id: 'proassist',
-    number: '03',
+    number: '02',
     title: 'ProAssist',
     descKey: 'proj.proassist.desc',
     stack: ['Python', 'Groq API', 'Docker', 'Render'],
@@ -177,6 +132,51 @@ export const projects: Project[] = [
           label: 'Código en GitHub',
           icon: 'fa-brands fa-github',
           variant: 'ghost',
+        },
+      ],
+    },
+  },
+  {
+    id: 'appfocus',
+    number: '03',
+    title: 'APPFOCUS',
+    version: 'CORE v3.0',
+    descKey: 'proj.appfocus.desc',
+    stack: ['JavaScript', 'Tailwind', 'Deep Work', 'Offline-First'],
+    githubUrl: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
+    detail: {
+      title: 'APPFOCUS CORE v3.0 — Deep Work Terminal',
+      blocks: [
+        {
+          type: 'paragraph',
+          title: 'Resumen del Proyecto',
+          text: 'APPFOCUS es una terminal de productividad de alto rendimiento concebida bajo los principios de la metodología Deep Work de Cal Newport. Su propósito es eliminar fricciones cognitivas durante sesiones de trabajo concentrado.',
+        },
+        {
+          type: 'list',
+          title: 'Aspectos Técnicos Clave',
+          items: [
+            {
+              label: 'Arquitectura 100% Offline-First:',
+              text: 'Sin dependencias de red externas ni rastreadores. Todos los datos permanecen locales.',
+            },
+            {
+              label: 'Algoritmo de Foco Dinámico:',
+              text: 'Ajuste automático de bloques de trabajo e intervalos de descanso según ritmo circadiano.',
+            },
+            {
+              label: 'Estética Minimalista:',
+              text: 'UI construida con Tailwind CSS y Vanilla JavaScript altamente optimizado.',
+            },
+          ],
+        },
+      ],
+      links: [
+        {
+          href: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
+          label: 'Repositorio GitHub',
+          icon: 'fa-brands fa-github',
+          variant: 'primary',
         },
       ],
     },

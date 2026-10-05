@@ -1591,6 +1591,180 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   max-width: 260px;
 }
 
+/* ── Blurred Screen Preview & "Ver aquí" Button ── */
+.demo-mock-preview {
+  position: absolute;
+  inset: 0;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--clr-surface);
+  filter: blur(6px);
+  opacity: 0.7;
+  transform: scale(1.04);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.demo-mock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.demo-mock-pill {
+  width: 70px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--clr-border);
+}
+
+.demo-mock-pill--primary {
+  width: 100px;
+  background: var(--clr-primary);
+  opacity: 0.75;
+}
+
+.demo-mock-pill--sec {
+  width: 85px;
+  background: var(--clr-secondary);
+  opacity: 0.75;
+}
+
+.demo-mock-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.demo-mock-line {
+  height: 10px;
+  border-radius: var(--radius-xs);
+  background: var(--clr-surface-3);
+  width: 85%;
+}
+
+.demo-mock-line--short {
+  width: 55%;
+}
+
+.demo-mock-line--accent {
+  background: var(--clr-border-hover);
+  width: 70%;
+}
+
+.demo-mock-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.demo-mock-box {
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+}
+
+.demo-mock-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.demo-mock-bubble {
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--clr-surface-3);
+  height: 36px;
+}
+
+.demo-mock-bubble--user {
+  align-self: flex-end;
+  background: var(--clr-secondary-glow);
+  border: 1px solid rgba(164, 147, 255, 0.25);
+  width: 65%;
+}
+
+.demo-mock-bubble--bot {
+  align-self: flex-start;
+  background: var(--clr-surface-3);
+  border: 1px solid var(--clr-border);
+  width: 78%;
+}
+
+/* Glassmorphic Overlay with "Ver aquí" Button */
+.demo-blur-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(11, 13, 18, 0.45);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: opacity var(--dur-base) var(--ease-out), visibility var(--dur-base);
+}
+
+.demo-blur-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.btn-demo-open-here {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  background: var(--clr-primary);
+  color: #080a14;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px var(--clr-primary-glow), 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition:
+    transform var(--dur-fast) var(--ease-spring),
+    box-shadow var(--dur-fast),
+    background var(--dur-fast);
+}
+
+.btn-demo-open-here:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 8px 28px var(--clr-primary-glow), 0 4px 14px rgba(0, 0, 0, 0.45);
+  background: #26f0d1;
+}
+
+.btn-demo-open-here:focus-visible {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 3px;
+}
+
+.btn-demo-open-here i {
+  font-size: 0.8rem;
+}
+
+.demo-blur-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--clr-on-surface-med);
+  letter-spacing: 0.02em;
+}
+
 /* Touch shield for mobile gestures */
 .demo-touch-shield {
   display: none;

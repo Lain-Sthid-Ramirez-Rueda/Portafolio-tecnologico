@@ -131,6 +131,9 @@ export const translations = {
     'demo.loading_generic': 'Cargando demo interactiva...',
     'demo.starting_cloud': 'Iniciando contenedor IA...',
     'demo.touch_hint': 'Toca para interactuar',
+    'demo.view_here': 'Ver aquí',
+    'demo.view_here_hint': 'Probar demo interactiva',
+    'demo.collapse': 'Cerrar visor interactivo',
 
     'pwa.online': 'PWA En Línea',
     'pwa.offline': 'Modo Offline (PWA v3)',
@@ -266,6 +269,9 @@ export const translations = {
     'demo.loading_generic': 'Loading interactive demo...',
     'demo.starting_cloud': 'Starting AI container...',
     'demo.touch_hint': 'Tap to interact',
+    'demo.view_here': 'View here',
+    'demo.view_here_hint': 'Try interactive demo',
+    'demo.collapse': 'Close interactive view',
 
     'pwa.online': 'PWA Online',
     'pwa.offline': 'Offline Mode (PWA v3)',

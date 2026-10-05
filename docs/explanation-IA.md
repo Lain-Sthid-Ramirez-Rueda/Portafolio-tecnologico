@@ -610,3 +610,32 @@ In the 2×2 grid layout, having live demo frames only on Card 01 (`congreso`) an
 - `npm run lint`: 0 errors.
 - `npm run build` (`astro check` & `astro build`): 0 errors, 0 warnings.
 - CSP script hashes in `dist/index.html` verified byte-identical to `vercel.json`, `_headers`, and `index.astro`.
+
+### 7.21. Project Reordering (ProAssist #02) and Frosted Glassmorphic Preview Overlays with "Ver aquí" Modal Trigger (Phase 22)
+
+**Triggers & Requirements**:
+1. Swap project order so that `ProAssist` occupies position 02 (`01: congreso`, `02: proassist`, `03: appfocus`, `04: upcoming`).
+2. Implement frosted/blurred screen previews ("pantallas borrosas") across all project cards with a prominent interactive CTA button ("Ver aquí" / "View here").
+3. When clicked, the preview opens the interactive experience in a dedicated modal dialog ("al dar click se abra así como en demo").
+4. Maintain 100% Google PageSpeed scores, WCAG AAA contrast, responsive zero-CLS layout, and zero errors.
+
+**Architectural Design & Component Refactoring**:
+- **Data Reordering** (`src/data/projects.ts`): Reordered `projects` array so indices and string numbers reflect `01: congreso`, `02: proassist`, `03: appfocus`, `04: upcoming`.
+- **Frosted Glassmorphic Overlay (`.demo-blur-overlay`)**:
+  - Rendered over `.demo-embed-viewport` with `backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background: rgba(11, 13, 18, 0.45); z-index: 3`.
+  - Light-mode support (`[data-theme="light"] .demo-blur-overlay`) utilizes `rgba(255, 255, 255, 0.55)` to preserve light theme luminosity and legibility.
+- **CTA Button (`.btn-demo-open-here`)**:
+  - Stylized pill button with primary teal fill (`var(--clr-primary)`), high-contrast dark text (`#080a14`), glowing spring shadow (`box-shadow: 0 4px 20px var(--clr-primary-glow)`), and hover spring translation.
+  - Accompanied by a monospace micro-hint (`.demo-blur-hint`) localized via `t('demo.view_here_hint')`.
+- **Card-Specific Behaviors**:
+  - `ProjectDemoEmbed` (`congreso`, `proassist`): The live iframe is loaded via `IntersectionObserver` in the background with `opacity: 0.75`. The blur overlay displays `[ ▶ Ver aquí ]`. On click, `openDemo({ url, title })` opens `LiveDemoDialog`, giving full-screen fidelity. On small mobile ($W < 520\text{px}$), opens in an external tab to prevent cramped viewport UX.
+  - `AppFocusBlurPreview` (`appfocus`): Contains a blurred terminal skeleton (`.demo-mock-preview`) with lines, pills, and grid boxes behind the frosted overlay. The CTA button `[ 👁 Ver aquí ]` invokes `openProject('appfocus')` to display architectural details and offline metrics.
+  - `UpcomingBlurPreview` (`upcoming`): Contains a blurred multi-agent chat skeleton (`.demo-mock-chat`) behind the frosted overlay. The CTA button `[ 👁 Ver aquí ]` invokes `openProject('upcoming')` to display the subagent pipeline roadmap.
+- **Mobile Touch Shield Elimination**:
+  - Because `.demo-blur-overlay` spans `inset: 0` with `z-index: 3`, mobile vertical swipes pass cleanly over the card without being trapped by nested iframe scroll handlers, eliminating the need for a separate `.demo-touch-shield` toggle.
+
+**Verification**:
+- `npm test`: 13/13 passing tests.
+- `npm run lint`: 0 errors (5 pre-existing react-refresh warnings).
+- `npm run build` (`astro check` & `astro build`): 0 errors, 0 warnings, SSG static HTML pre-rendered with zero runtime overhead.
+
