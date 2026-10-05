@@ -124,6 +124,13 @@ export const translations = {
 
     'demo.loading': 'Iniciando contenedor en Render',
     'demo.loading_sub': 'Esto puede tomar hasta 30 segundos la primera vez',
+    'demo.live_status': 'En vivo',
+    'demo.reload': 'Recargar demo',
+    'demo.fullscreen': 'Ver a pantalla completa',
+    'demo.open_external': 'Abrir en pestaña nueva',
+    'demo.loading_generic': 'Cargando demo interactiva...',
+    'demo.starting_cloud': 'Iniciando contenedor IA...',
+    'demo.touch_hint': 'Toca para interactuar',
 
     'pwa.online': 'PWA En Línea',
     'pwa.offline': 'Modo Offline (PWA v3)',
@@ -252,6 +259,13 @@ export const translations = {
 
     'demo.loading': 'Starting container on Render',
     'demo.loading_sub': 'This may take up to 30 seconds on first load',
+    'demo.live_status': 'Live',
+    'demo.reload': 'Reload demo',
+    'demo.fullscreen': 'View full screen',
+    'demo.open_external': 'Open in new tab',
+    'demo.loading_generic': 'Loading interactive demo...',
+    'demo.starting_cloud': 'Starting AI container...',
+    'demo.touch_hint': 'Tap to interact',
 
     'pwa.online': 'PWA Online',
     'pwa.offline': 'Offline Mode (PWA v3)',

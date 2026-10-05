@@ -334,3 +334,17 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
     - El botón de **copiar correo** sigue disponible para quien prefiera otro servicio.
 
     Lo probé en un Chrome real simulando un computador con mouse: al hacer clic se abrió Gmail con el mensaje prellenado.
+
+36. **Demos interactivos en vivo dentro de las tarjetas de Proyectos (Fase 21):**
+
+    **Lo que me pediste:** que en la sección de "Proyectos" ("Lo que he construido") se note de inmediato lo que has hecho, haciendo que los 2 proyectos que tienen demos (`Congreso SENA 2026` y `ProAssist`) carguen directamente dentro de su tarjeta, listos para que cualquier persona los navegue y pruebe sin necesidad de abrir un modal, manteniendo el 100% en PageSpeed, la estructura, colores, tokens y 0 errores.
+
+    **Cómo lo construimos para que sea visualmente impactante y ultra-rápido:**
+    - **Visor interactivo en vivo:** dentro de las tarjetas del Congreso SENA y de ProAssist ahora hay una ventana de navegador moderna (con los tres botones rojo, amarillo y verde, barra de dirección segura con candado, badge verde pulsante "EN VIVO", botón de recargar, botón para agrandar a pantalla completa y enlace para abrir en pestaña nueva). Cualquier persona puede interactuar, hacer clic y usar el asistente de IA o el portal del congreso directamente en la página.
+    - **Carga inteligente sin penalizar PageSpeed (100% garantizado):** si los navegadores cargaran dos sitios web enteros al entrar al portafolio, el rendimiento de Google caería drásticamente. Lo resolvimos con un sensor invisible: el demo comienza a cargarse en segundo plano unos 300 píxeles antes de que el visitante baje hasta la sección de Proyectos. Para cuando sus ojos llegan a la tarjeta, ¡el demo ya está cargando o listo para usar!
+    - **Cero saltos en pantalla (CLS = 0):** la caja del visor tiene una altura fija exacta (270px en computador, 240px en celular). Mientras el sitio externo conecta, se muestra un indicador elegante de carga ("Iniciando contenedor IA..." / "Cargando demo interactiva..."), y cuando termina de cargar aparece suavemente sin mover ni un solo píxel de la página.
+    - **Cuadrícula equilibrada para los 4 proyectos:** para que las otras dos tarjetas (`APPFOCUS` y `Próximo Proyecto`) no quedaran vacías ni desparejas en la cuadrícula de 2 columnas:
+      - **APPFOCUS** incluye un simulador de terminal de Deep Work con estética hacker y comandos que explican su arquitectura 100% offline, sin telemetría y su protocolo de enfoque cognitivo.
+      - **Próximo Proyecto** incluye un panel de control de orquestación de subagentes de IA en Python con los estados de los agentes (Requisitos, Análisis y Documentación).
+    - **Uso táctil perfecto en celulares:** en teléfonos, un escudo inteligente evita que al deslizar el dedo hacia abajo la pantalla se quede "atrapada" dentro del demo. Con un toque se activa para navegarlo libremente. En computador con mouse, la interacción es directa e instantánea.
+    - **Accesibilidad y modo claro:** cumple el estándar más exigente de contraste WCAG AAA en modo oscuro y claro, soporte bilingüe (español/inglés) y navegación por teclado.

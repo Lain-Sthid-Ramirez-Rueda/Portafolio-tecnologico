@@ -43,6 +43,19 @@ describe('App', () => {
     expect(within(footer).getByText(String(new Date().getFullYear()))).toBeInTheDocument();
   });
 
+  it('renders interactive demo preview frames and terminal simulators for all projects', () => {
+    render(<App />);
+    const projects = document.getElementById('projects')!;
+
+    const previewFrames = projects.querySelectorAll('.project-preview-frame');
+    expect(previewFrames.length).toBe(4);
+
+    expect(within(projects).getByText('congreso-sena.vercel.app')).toBeInTheDocument();
+    expect(within(projects).getByText('proassist-r1q6.onrender.com')).toBeInTheDocument();
+    expect(within(projects).getByText('appfocus-core-v3.0.sh')).toBeInTheDocument();
+    expect(within(projects).getByText('orchestrator.sandbox.py')).toBeInTheDocument();
+  });
+
   it('does not mount any dialog until it has been opened (lazy-loaded)', () => {
     render(<App />);
     for (const id of ['cv-dialog', 'terminal-dialog', 'project-modal', 'cert-modal', 'demo-modal']) {
