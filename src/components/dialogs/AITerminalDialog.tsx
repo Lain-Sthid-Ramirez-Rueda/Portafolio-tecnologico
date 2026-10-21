@@ -6,13 +6,13 @@ import { useSoundDesign } from '../../contexts/SoundContext';
 
 const COMMANDS: Record<string, () => string> = {
   help: () => 'Comandos disponibles: bio, stack, projects, contact, ai, clear, date, whoami, exit',
-  bio: () => 'Lain Sthid Ramirez Rueda | Analista & Dev SENA. Especialista en IA, Python, Elicitación de Requisitos y UI/UX.',
+  bio: () => 'Lain Sthid Ramirez Rueda | Analista y Desarrollador de Software en formación (SENA). Frontend con React y TypeScript, IA aplicada con Python y elicitación de requisitos.',
   stack: () =>
-    'Frontend: HTML5, CSS3 (MD3), JS ES6+\nBackend: Python, Git/GitHub, Docker\nIA: Subagentes IA, Claude, Groq/LLaMA, Gemini, Prompt Engineering',
+    'Frontend: React, TypeScript, Astro, HTML5, CSS3, Tailwind\nBackend: Python, Flask, Supabase, Docker\nIA: integración de LLMs (Groq API), Claude, Gemini, Prompt Engineering\nCalidad: Vitest, ESLint, Git/GitHub',
   projects: () =>
-    '1. Congreso SENA 2026 (Sitio Oficial Virtual)\n2. APPFOCUS CORE v3.0 (Offline Productivity Terminal)\n3. ProAssist (Bilingual LLaMA 3.3-70B + Groq AI Chatbot)\n4. Próximo Proyecto (AI Autonomous Subagents Sandbox)',
+    '1. Congreso SENA 2026 (sitio oficial, seleccionado por convocatoria)\n2. ProAssist (asistente de IA bilingüe sobre Groq API)\n3. APPFOCUS (gestor de productividad Deep Work)\n4. Este portafolio (Astro + React + TypeScript, PWA)',
   contact: () => 'WhatsApp: +57 3209735859\nEmail: lainramirez18@gmail.com\nLinkedIn: lain-sthid-ramirez-rueda\nGitHub: Lain-Sthid-Ramirez-Rueda',
-  ai: () => '🤖 AI Sub-Agent Status: Online (Groq + LLaMA 3.3-70B API connected). Ready for prompt orchestration.',
+  ai: () => '🤖 Para conversar con IA de verdad, prueba la demo de ProAssist en la sección Proyectos.',
   date: () => `Fecha actual: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
   whoami: () => 'visitor@lsrr-portfolio-guest',
 };

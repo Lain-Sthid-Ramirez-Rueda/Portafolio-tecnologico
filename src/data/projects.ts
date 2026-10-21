@@ -49,7 +49,12 @@ export const projects: Project[] = [
         {
           type: 'paragraph',
           title: 'Resumen del Proyecto',
-          text: 'Sitio web oficial del Congreso Virtual de Redes de Conocimiento 2026: Innovación y Transferencia, organizado por el Centro de Gestión de Mercados, Logística y TIC del SENA (26, 27 y 28 de octubre de 2026). Es el canal principal de consulta para aprendices, instructores e investigadores: programación, redes de conocimiento, modalidades de participación, ponencias, pósteres y publicaciones.',
+          text: 'Sitio web oficial del Congreso Virtual de Redes de Conocimiento 2026: Innovación y Transferencia, organizado por el Centro de Mercados, Logística y Tecnologías de la Información del SENA (26, 27 y 28 de octubre de 2026). Es el canal principal de consulta para aprendices, instructores e investigadores: programación, redes de conocimiento, modalidades de participación, ponencias, pósteres y publicaciones.',
+        },
+        {
+          type: 'paragraph',
+          title: 'Mi Rol',
+          text: 'Fui seleccionado como aprendiz mediante convocatoria y pruebas técnicas para desarrollar el sitio. Estoy a cargo de su desarrollo de principio a fin: levanto los requisitos con el comité organizador, implemento las funcionalidades y aplico los cambios que se solicitan a lo largo de la convocatoria (resultados, pósteres aprobados, programación y salas).',
         },
         {
           type: 'list',
@@ -65,7 +70,7 @@ export const projects: Project[] = [
             },
             {
               label: 'Identidad Institucional y Accesibilidad:',
-              text: 'Manual de marca SENA 2024, contraste WCAG AAA, menú de accesibilidad, navegación por teclado y bilingüe ES/EN.',
+              text: 'Manual de marca SENA 2024, alto contraste siguiendo pautas WCAG, menú de accesibilidad, navegación por teclado y versión bilingüe ES/EN.',
             },
             {
               label: 'SEO y Documentos:',
@@ -99,7 +104,7 @@ export const projects: Project[] = [
         {
           type: 'paragraph',
           title: 'Resumen del Proyecto',
-          text: 'ProAssist es un asistente conversacional bilingüe diseñado para responder consultas complejas, automatizar tareas y actuar como un compañero inteligente de desarrollo en tiempo real.',
+          text: 'ProAssist es un asistente conversacional bilingüe de productividad: responde en el idioma del usuario, da formato Markdown a sus respuestas y permite copiar bloques de código con un clic.',
         },
         {
           type: 'list',
@@ -107,11 +112,15 @@ export const projects: Project[] = [
           items: [
             {
               label: 'Motor de IA:',
-              text: 'Impulsado por LLaMA 3.3-70B ejecutado sobre Groq LPU (Language Processing Unit) API, alcanzando velocidades de generación superiores a 300 tokens/segundo.',
+              text: 'Modelos de lenguaje open-source servidos por Groq API, de muy baja latencia. El modelo es configurable por variable de entorno.',
             },
             {
-              label: 'Infraestructura:',
-              text: 'Aplicación Python contenerizada en un contenedor Docker optimizado y desplegada en Render.',
+              label: 'Backend e Infraestructura:',
+              text: 'Python con Flask y Gunicorn multihilo, sesiones aisladas por usuario con expiración automática, contenerizado con Docker y desplegado en Render con endpoint de salud.',
+            },
+            {
+              label: 'Seguridad:',
+              text: 'Límite de peticiones por IP, sanitización anti-XSS con DOMPurify, cabeceras HTTP y Content Security Policy, y protección de instrucciones contra inyección de prompts.',
             },
             {
               label: 'Soporte Bilingüe:',
@@ -142,7 +151,7 @@ export const projects: Project[] = [
     title: 'APPFOCUS',
     version: 'CORE v3.0',
     descKey: 'proj.appfocus.desc',
-    stack: ['JavaScript', 'Tailwind', 'Deep Work', 'Offline-First'],
+    stack: ['React', 'Tailwind', 'Deep Work', 'Local-First'],
     githubUrl: 'https://github.com/Lain-Sthid-Ramirez-Rueda/APPFOCUS',
     detail: {
       title: 'APPFOCUS CORE v3.0 — Deep Work Terminal',
@@ -150,23 +159,23 @@ export const projects: Project[] = [
         {
           type: 'paragraph',
           title: 'Resumen del Proyecto',
-          text: 'APPFOCUS es una terminal de productividad de alto rendimiento concebida bajo los principios de la metodología Deep Work de Cal Newport. Su propósito es eliminar fricciones cognitivas durante sesiones de trabajo concentrado.',
+          text: 'APPFOCUS es una aplicación de productividad basada en la metodología Deep Work de Cal Newport. Organiza el día en bloques de trabajo con una interfaz sin distracciones para sostener sesiones de concentración.',
         },
         {
           type: 'list',
           title: 'Aspectos Técnicos Clave',
           items: [
             {
-              label: 'Arquitectura 100% Offline-First:',
-              text: 'Sin dependencias de red externas ni rastreadores. Todos los datos permanecen locales.',
+              label: 'Datos Locales y Privados:',
+              text: 'Sin servidor, cuentas ni rastreadores: los bloques se guardan en el navegador (localStorage) y nunca salen del dispositivo.',
             },
             {
-              label: 'Algoritmo de Foco Dinámico:',
-              text: 'Ajuste automático de bloques de trabajo e intervalos de descanso según ritmo circadiano.',
+              label: 'Índice de Eficiencia Diaria:',
+              text: 'Calcula en tiempo real el porcentaje de bloques completados, con categorías Deep Work, Hábito, Aprendizaje y Operativo, y búsqueda instantánea.',
             },
             {
-              label: 'Estética Minimalista:',
-              text: 'UI construida con Tailwind CSS y Vanilla JavaScript altamente optimizado.',
+              label: 'Arquitectura Modular:',
+              text: 'Refactorizado de un único archivo a componentes React separados, con Tailwind CSS y JSX compilado en el navegador sin bundler.',
             },
           ],
         },
@@ -194,7 +203,7 @@ export const projects: Project[] = [
         {
           type: 'paragraph',
           title: 'En Desarrollo',
-          text: 'Actualmente me encuentro construyendo un ecosistema de subagentes autónomos de IA integrados con canal de orquestación en Python. Este proyecto busca automatizar flujos complejos de elicitar requisitos, análisis de datos y generación de documentación técnica.',
+          text: 'Estoy explorando la orquestación de agentes de IA en Python para apoyar la elicitación de requisitos, el análisis de datos y la generación de documentación técnica.',
         },
       ],
       links: [

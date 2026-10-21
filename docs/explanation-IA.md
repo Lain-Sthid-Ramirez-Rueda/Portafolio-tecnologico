@@ -639,3 +639,17 @@ In the 2×2 grid layout, having live demo frames only on Card 01 (`congreso`) an
 - `npm run lint`: 0 errors (5 pre-existing react-refresh warnings).
 - `npm run build` (`astro check` & `astro build`): 0 errors, 0 warnings, SSG static HTML pre-rendered with zero runtime overhead.
 
+
+### 7.22. Copy Accuracy Pass, Data-Driven Project Counter, and Regenerated CVs (Phase 23)
+
+**Motivation**: Several published claims contradicted the source of truth (code, other repos, or the Education section), which reviewers can verify.
+
+**Changes**:
+- **Metadata** (`src/pages/index.astro`, `public/llms.txt`): `og:description`, `twitter:description`, meta description and JSON-LD `Person.description` no longer state "graduado del SENA" (status is in-progress, expected 2027). `knowsAbout` now reflects the actual stack (React, TypeScript, Astro, Flask, Supabase…).
+- **Copy** (`src/i18n/translations.ts`, ES/EN parity preserved — 113 keys each): rewrote `hero.subtitle`, `about.title`, `about.p1–p4`, `about.tag1–2`, `proj.*.desc`, `contact.desc`. Removed unverifiable claims: "WCAG AAA" (→ WCAG guidelines), "LLaMA 3.3-70B" (ProAssist's `GROQ_MODEL` default is a Qwen model), "100% offline" / "circadian rhythm algorithm" for APPFOCUS (it loads React/Babel/Tailwind from CDNs; efficiency = completed/total blocks).
+- **Project details** (`src/data/projects.ts`): added a "Mi Rol" paragraph block to `congreso`; ProAssist detail now lists Flask/Gunicorn, session TTL and security controls from its README; APPFOCUS stack `['React','Tailwind','Deep Work','Local-First']`.
+- **Counter** (`src/hooks/useCounterAnim.ts`, `src/components/sections/Hero.tsx`): `useState(target)` instead of `useState(0)` so the SSG output and no-JS clients render the real value; the effect animates 0 → target via a local accumulator once `inView`. Target is `projects.filter(p => !p.upcoming).length` (= 3) instead of the hard-coded 2.
+- **Misc**: AI terminal `bio`/`stack`/`projects`/`ai` responses updated; APPFOCUS preview tag `100% OFFLINE` → `LOCAL-FIRST`; skill pill `Groq / LLaMA` → `Groq API`.
+- **CVs** (`public/assets/docs/CV_Lain_Ramirez_{ES,EN}.pdf`): regenerated (A4, single page, DejaVu Serif for correct diacritics) with a new Experience section (SENA Congress web developer), the portfolio as a project, and the current GitHub username.
+
+**Verification**: translation key parity checked by importing `translations.ts` under Node's type stripping; `projects.ts` imports cleanly (4 entries, 3 shipped). `npm test` / `npm run build` were not runnable in the editing environment (no npm registry access) and must be run in CI or locally before merging.

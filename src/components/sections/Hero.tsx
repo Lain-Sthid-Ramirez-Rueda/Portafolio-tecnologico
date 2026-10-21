@@ -3,13 +3,17 @@ import { TransBreak } from '../../i18n/TransBreak';
 import { useHeroCanvas } from '../../hooks/useHeroCanvas';
 import { useCounterAnim } from '../../hooks/useCounterAnim';
 import { useDialogs } from '../../contexts/DialogsContext';
+import { projects } from '../../data/projects';
+
+// Shipped projects listed in the portfolio (the "upcoming" placeholder doesn't count).
+const PROJECT_COUNT = projects.filter((p) => !p.upcoming).length;
 
 function ProjectsStat() {
-  const { ref, display } = useCounterAnim<HTMLSpanElement>(2, '+');
+  const { ref, display } = useCounterAnim<HTMLSpanElement>(PROJECT_COUNT, '+');
   const { t } = useLang();
   return (
     <div className="stat">
-      <span className="stat-number" ref={ref} data-counter="2">
+      <span className="stat-number" ref={ref} data-counter={PROJECT_COUNT}>
         {display}
       </span>
       <span className="stat-label">{t('hero.stat_projects')}</span>

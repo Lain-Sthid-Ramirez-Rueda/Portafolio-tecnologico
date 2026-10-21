@@ -10,7 +10,7 @@ export const translations = {
     'hero.role': 'Analista y Desarrollador\nde Software',
     'hero.role_short': 'Analista & Dev',
     'hero.subtitle':
-      'Transformando lógica compleja en interfaces fluidas. Especialista en elicitación de requisitos, automatización inteligente con IA y desarrollo web.',
+      'Convierto necesidades reales en aplicaciones web claras y fáciles de usar. Desarrollo con React y TypeScript, integro IA con Python y empiezo cada proyecto entendiendo bien los requisitos.',
     'hero.cta_primary': 'Ver mis proyectos',
     'hero.cta_secondary': 'Conectemos',
     'hero.download_cv': 'Descargar CV',
@@ -29,17 +29,17 @@ export const translations = {
     'cv.close_dialog': 'Cerrar modal',
 
     'about.label': 'Sobre mí',
-    'about.title': 'Arquitecto de\nexperiencias digitales.',
+    'about.title': 'Del requisito\nal producto.',
     'about.p1':
-      'Soy Analista y Desarrollador de Software en formación en el SENA, con un enfoque profundo en la elicitación de requisitos y el diseño de interfaces de alto impacto. Me encuentro en proceso de aprendizaje de arquitecturas Full-Stack. Mi objetivo es siempre equilibrar robustez técnica con experiencias de usuario impecables.',
+      'Soy Analista y Desarrollador de Software en formación en el SENA. Fui seleccionado mediante convocatoria y pruebas técnicas para desarrollar el sitio oficial del Congreso Virtual de Redes de Conocimiento 2026, y desde entonces estoy a cargo de su desarrollo y de cada cambio que solicita el comité organizador.',
     'about.p2':
-      'Me apasiona la inteligencia artificial y la automatización de procesos. Trabajo con subagentes de IA, prompt engineering avanzado y herramientas como Claude, Groq, Gemini y GPT para construir soluciones que realmente marcan la diferencia.',
+      'Trabajo principalmente con React y TypeScript en el frontend, y con Python para integrar modelos de lenguaje (LLMs) en aplicaciones reales, como mi asistente ProAssist. Uso a diario herramientas como Claude, Gemini, GPT y Groq para acelerar el desarrollo y automatizar tareas.',
     'about.p3':
-      'Soy un aprendiz constante por naturaleza. Cada proyecto es una oportunidad para innovar, resolver problemas complejos y elevar el estándar de lo que es posible con tecnología.',
+      'Aprendo rápido y mis proyectos lo muestran: en cada uno incorporo una tecnología nueva y la llevo hasta producción, con pruebas, despliegue y documentación.',
     'about.p4':
-      'Además de mis habilidades técnicas, valoro profundamente la colaboración interdisciplinaria y la comunicación efectiva con equipos de trabajo. Mi experiencia en elicitación de requisitos me ha enseñado la importancia de escuchar activamente las necesidades del cliente y traducirlas en especificaciones técnicas claras y ejecutables.',
-    'about.tag1': 'Arquitecto Digital',
-    'about.tag2': 'AI Specialist',
+      'Mi formación como analista es mi diferencial: antes de escribir código, escucho a quien va a usar el producto y traduzco sus necesidades en requisitos claros. Así trabajo con el comité del Congreso y así abordo cualquier proyecto en equipo.',
+    'about.tag1': 'Frontend · React',
+    'about.tag2': 'IA aplicada',
     'about.tag3': 'En proceso · Full-Stack',
     'about.tag4': 'UI/UX Design',
     'about.tag5': 'Open Source',
@@ -86,11 +86,11 @@ export const translations = {
     'projects.title': 'Lo que he construido',
     'proj.view_details': 'Ver detalles',
     'proj.congreso.desc':
-      'Sitio web oficial del Congreso Virtual de Redes de Conocimiento 2026 del SENA. Programación, ponencias, pósteres con votación en vivo, visor PDF y diseño institucional bilingüe con accesibilidad WCAG AAA.',
+      'Sitio oficial del Congreso Virtual de Redes de Conocimiento 2026 del SENA, que desarrollo desde que fui seleccionado por convocatoria. Agenda de 3 días, galería de pósteres con votación en vivo, visor PDF y diseño institucional bilingüe y accesible.',
     'proj.appfocus.desc':
-      'Terminal de productividad de alto rendimiento basado en la metodología Deep Work. Algoritmo de eficiencia dinámica, arquitectura 100% offline y experiencia sin distracciones para maximizar el foco cognitivo.',
+      'Gestor de productividad basado en la metodología Deep Work. Organiza el día en bloques por categoría, calcula en tiempo real qué porcentaje de lo planeado se cumplió y guarda los datos solo en el navegador.',
     'proj.proassist.desc':
-      'Asistente inteligente bilingüe impulsado por LLaMA 3.3-70B y Groq API. Chatbot de productividad sin límites, contenerizado con Docker y desplegado en Render. Responde consultas complejas en tiempo real.',
+      'Asistente de IA bilingüe sobre Groq API, con backend en Python (Flask) contenerizado con Docker y desplegado en Render. Incluye sesiones aisladas por usuario, límite de peticiones, protección anti-XSS y defensa contra inyección de prompts.',
     'proj.upcoming_badge': 'En Desarrollo',
     'proj.upcoming.title': 'Próximo Proyecto',
     'proj.upcoming.desc':
@@ -101,7 +101,7 @@ export const translations = {
     'contact.label': 'Contacto',
     'contact.title': 'Transformemos ideas\nen soluciones.',
     'contact.desc':
-      '¿Buscas un desarrollador integral comprometido con la calidad y la innovación constante? Ya sea que tengas un proyecto, una oportunidad o simplemente quieras conectar.',
+      'Busco oportunidades como desarrollador frontend o en equipos que construyan productos con IA, incluida mi etapa productiva. Si tienes un proyecto o una oportunidad, escríbeme.',
     'contact.cta': 'Contáctame ahora',
     'contact.copied_email': '¡Correo copiado al portapapeles! 📋',
     'contact.copied_phone': '¡WhatsApp copiado al portapapeles! 📋',
@@ -149,7 +149,7 @@ export const translations = {
     'hero.role': 'Software Analyst\n& Developer',
     'hero.role_short': 'Analyst & Dev',
     'hero.subtitle':
-      'Turning complex logic into fluid interfaces. Specialist in requirements elicitation, AI-driven automation, and web development.',
+      'I turn real needs into clear, easy-to-use web applications. I build with React and TypeScript, integrate AI with Python, and start every project by getting the requirements right.',
     'hero.cta_primary': 'View my projects',
     'hero.cta_secondary': "Let's connect",
     'hero.download_cv': 'Download CV',
@@ -168,17 +168,17 @@ export const translations = {
     'cv.close_dialog': 'Close modal',
 
     'about.label': 'About me',
-    'about.title': 'Architect of\ndigital experiences.',
+    'about.title': 'From requirement\nto product.',
     'about.p1':
-      'I am a Software Analyst and Developer in training at SENA, with a deep focus on requirements elicitation and high-impact UI design. I am currently learning Full-Stack architectures. My goal is always to balance technical robustness with flawless user experiences.',
+      'I am a Software Analyst and Developer in training at SENA. I was selected through an open call and technical tests to build the official website of SENA’s 2026 Virtual Knowledge Networks Congress, and I have been responsible for its development and every change the organizing committee requests ever since.',
     'about.p2':
-      'I am passionate about artificial intelligence and process automation. I work with AI sub-agents, advanced prompt engineering, and cutting-edge tools like Claude, Groq, Gemini, and GPT to build solutions that make a real difference.',
+      'I work mainly with React and TypeScript on the frontend, and with Python to integrate large language models (LLMs) into real applications, such as my ProAssist assistant. I use tools like Claude, Gemini, GPT, and Groq daily to speed up development and automate tasks.',
     'about.p3':
-      'I am a constant learner by nature. Every project is an opportunity to innovate, solve complex problems, and elevate the standard of what is possible with technology.',
+      'I learn fast, and my projects show it: in each one I pick up a new technology and take it all the way to production, with tests, deployment, and documentation.',
     'about.p4':
-      'Beyond technical skills, I deeply value interdisciplinary collaboration and effective team communication. My experience in requirements elicitation has taught me the importance of active listening to translate client needs into clear technical specifications.',
-    'about.tag1': 'Digital Architect',
-    'about.tag2': 'AI Specialist',
+      'My analyst training is what sets me apart: before writing code, I listen to the people who will use the product and turn their needs into clear requirements. That is how I work with the Congress committee, and how I approach any team project.',
+    'about.tag1': 'Frontend · React',
+    'about.tag2': 'Applied AI',
     'about.tag3': 'In Progress · Full-Stack',
     'about.tag4': 'UI/UX Design',
     'about.tag5': 'Open Source',
@@ -225,11 +225,11 @@ export const translations = {
     'projects.title': 'What I have built',
     'proj.view_details': 'View details',
     'proj.congreso.desc':
-      'Official website of SENA’s 2026 Virtual Knowledge Networks Congress. Schedule, papers, posters with live voting, built-in PDF viewer, and bilingual institutional design with WCAG AAA accessibility.',
+      'Official website of SENA’s 2026 Virtual Knowledge Networks Congress, which I have been building since I was selected through an open call. Three-day schedule, poster gallery with live voting, built-in PDF viewer, and a bilingual, accessible institutional design.',
     'proj.appfocus.desc':
-      'High-performance productivity terminal based on Deep Work methodology. Dynamic efficiency algorithm, 100% offline architecture, and distraction-free cognitive focus experience.',
+      'Productivity app based on the Deep Work methodology. It organizes the day into blocks by category, shows in real time how much of the plan was completed, and keeps all data in the browser only.',
     'proj.proassist.desc':
-      'Smart bilingual assistant powered by LLaMA 3.3-70B and Groq API. Unlimited productivity chatbot containerized with Docker and deployed on Render. Handles complex queries in real time.',
+      'Bilingual AI assistant built on the Groq API, with a Python (Flask) backend containerized with Docker and deployed on Render. Features per-user isolated sessions, rate limiting, XSS protection, and prompt-injection defenses.',
     'proj.upcoming_badge': 'In Development',
     'proj.upcoming.title': 'Next Project',
     'proj.upcoming.desc':
@@ -240,7 +240,7 @@ export const translations = {
     'contact.label': 'Contact',
     'contact.title': 'Let us turn ideas\ninto solutions.',
     'contact.desc':
-      'Looking for a well-rounded developer committed to constant quality and innovation? Whether you have a project, an opportunity, or just want to connect.',
+      'I am looking for opportunities as a frontend developer or on teams building AI products, including my SENA internship. If you have a project or an opportunity, get in touch.',
     'contact.cta': 'Contact me now',
     'contact.copied_email': 'Email copied to clipboard! 📋',
     'contact.copied_phone': 'WhatsApp copied to clipboard! 📋',

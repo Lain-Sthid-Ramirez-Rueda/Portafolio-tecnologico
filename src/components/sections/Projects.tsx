@@ -155,12 +155,12 @@ function AppFocusBlurPreview({ project }: { project: (typeof projects)[number] }
           <span className="demo-dot demo-dot--yellow" />
           <span className="demo-dot demo-dot--green" />
         </div>
-        <div className="demo-embed-url" title="APPFOCUS CORE v3.0 — 100% OFFLINE">
+        <div className="demo-embed-url" title="APPFOCUS CORE v3.0 — datos locales">
           <i className="fa-solid fa-terminal" aria-hidden="true" />
           <span>appfocus-core-v3.0.sh</span>
         </div>
         <div className="demo-embed-actions">
-          <span className="demo-tag-offline">100% OFFLINE</span>
+          <span className="demo-tag-offline">LOCAL-FIRST</span>
           {project.githubUrl && (
             <a
               href={project.githubUrl}

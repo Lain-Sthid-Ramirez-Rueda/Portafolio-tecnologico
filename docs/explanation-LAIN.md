@@ -365,3 +365,20 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
     - **Cero problemas táctiles en celulares:** gracias a la capa de cristal borroso que cubre la ventana, cuando estás en el celular y deslizas el dedo hacia abajo por la pantalla, el dedo nunca se "traba" dentro de los iframes. Deslizas con total suavidad.
     - **100% en PageSpeed conservado:** el código estático de Astro y la carga diferida por sensor de movimiento se mantienen al 100%. No hay saltos de diseño, no hay scripts innecesarios y las pruebas automáticas pasan 13 de 13 con 0 errores.
 
+
+38. **Textos más profesionales y datos coherentes con tus repositorios (Fase 23):**
+
+    **Lo que me pediste:** corregir el portafolio y los repositorios para que todo sonara profesional y fuera coherente, de cara a tu perfil de LinkedIn.
+
+    **Qué cambió y por qué:**
+    - **Ya no dice "graduado del SENA":** la vista previa que aparece al compartir tu enlace (LinkedIn, WhatsApp), los datos para Google y `llms.txt` ahora dicen "en formación", igual que la sección de Educación ("En curso · 2027").
+    - **Tu rol en el Congreso es visible:** "Sobre mí", la tarjeta del proyecto y su ficha ("Mi Rol") explican que fuiste seleccionado por convocatoria y pruebas, y que estás a cargo del desarrollo y de los cambios del comité.
+    - **Títulos más creíbles:** "Arquitecto de experiencias digitales" pasó a "Del requisito al producto", y las etiquetas "Arquitecto Digital" / "AI Specialist" a "Frontend · React" / "IA aplicada".
+    - **ProAssist sin contradicciones:** ya no menciona LLaMA 3.3-70B ni "300 tokens/s", porque el código usa por defecto otro modelo. Ahora habla de "modelos open-source servidos por Groq" y destaca lo que sí está construido: Flask, Docker, sesiones aisladas y seguridad.
+    - **APPFOCUS descrito tal como es:** no tenía algoritmo de "ritmo circadiano" ni era "100 % offline" (carga React desde internet). Ahora dice "índice de eficiencia diaria" y "datos locales"; además se le agregó guardado en el navegador en su propio repositorio.
+    - **Contador de proyectos real:** antes mostraba "0+" en la versión estática (la que ven Google y las vistas previas) y estaba fijado en 2. Ahora se calcula solo a partir de la lista de proyectos (3+) y la versión estática muestra el número correcto.
+    - **"Accesibilidad WCAG AAA" → "siguiendo pautas WCAG":** sin una auditoría que lo respalde, AAA es una afirmación que alguien podría desmentir.
+    - **CV nuevos (ES y EN):** incluyen una sección de **Experiencia** con el Congreso, el portafolio como proyecto, tildes correctas, el enlace a tu GitHub actual y descripciones coherentes con el código.
+    - **Terminal IA:** los comandos `bio`, `stack`, `projects` y `ai` usan la misma información actualizada.
+
+    **Verificación:** las claves de traducción ES/EN siguen coincidiendo (113/113) y los datos de proyectos se cargan sin errores. No se pudo correr `npm run build` ni `npm test` en este entorno (sin acceso al registro de npm): córrelos antes de fusionar.

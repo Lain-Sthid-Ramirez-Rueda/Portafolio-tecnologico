@@ -40,7 +40,7 @@ export const skillCategories: SkillCategory[] = [
       { icon: 'fa-solid fa-robot', label: 'Subagentes de IA' },
       { icon: 'fa-solid fa-wand-magic-sparkles', label: 'Prompt Engineering' },
       { icon: 'fa-solid fa-brain', label: 'Claude AI' },
-      { icon: 'fa-solid fa-bolt', label: 'Groq / LLaMA' },
+      { icon: 'fa-solid fa-bolt', label: 'Groq API' },
       { icon: 'fa-solid fa-gem', label: 'Gemini' },
       { icon: 'fa-solid fa-gears', label: 'Automatización' },
       { icon: 'fa-solid fa-chart-line', label: 'NumPy / Pandas' },
