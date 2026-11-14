@@ -3,6 +3,13 @@ import { TransBreak } from '../../i18n/TransBreak';
 import { useReveal } from '../../hooks/useReveal';
 import { useDialogs } from '../../contexts/DialogsContext';
 import { certifications } from '../../data/certifications';
+import type { TranslationKey } from '../../i18n/translations';
+
+const experience: { role: TranslationKey; org: TranslationKey; date: TranslationKey }[] = [
+  { role: 'about.exp1_role', org: 'about.exp1_org', date: 'about.exp1_date' },
+  { role: 'about.exp2_role', org: 'about.exp2_org', date: 'about.exp2_date' },
+  { role: 'about.exp3_role', org: 'about.exp3_org', date: 'about.exp3_date' },
+];
 
 export function About() {
   const { t } = useLang();
@@ -39,6 +46,22 @@ export function About() {
           </div>
 
           <div className={`about-aside reveal reveal-delay${asideVisible ? ' visible' : ''}`} ref={asideRef}>
+            <div className="about-card">
+              <div className="about-card-icon" aria-hidden="true">
+                <i className="fa-solid fa-code" />
+              </div>
+              <h3>{t('about.exp_title')}</h3>
+              <ul className="exp-list">
+                {experience.map((exp) => (
+                  <li className="exp-item" key={exp.role}>
+                    <span className="exp-role">{t(exp.role)}</span>
+                    <span className="exp-org">{t(exp.org)}</span>
+                    <span className="exp-date">{t(exp.date)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="about-card">
               <div className="about-card-icon" aria-hidden="true">
                 <i className="fa-solid fa-graduation-cap" />

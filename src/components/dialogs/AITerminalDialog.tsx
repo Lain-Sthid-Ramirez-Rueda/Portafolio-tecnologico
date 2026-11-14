@@ -5,12 +5,15 @@ import { useLang } from '../../i18n/LangContext';
 import { useSoundDesign } from '../../contexts/SoundContext';
 
 const COMMANDS: Record<string, () => string> = {
-  help: () => 'Comandos disponibles: bio, stack, qa, projects, contact, ai, clear, date, whoami, exit',
-  bio: () => 'Lain Sthid Ramirez Rueda | Analista y Desarrollador de Software en formación (SENA). Frontend con React y TypeScript, QA y testing (unitarias, integración, sistema, UAT), RPA, IA aplicada con Python y elicitación de requisitos.',
+  help: () => 'Comandos disponibles: bio, exp, stack, qa, projects, contact, ai, clear, date, whoami, exit',
+  bio: () =>
+    'Lain Sthid Ramirez Rueda | Aprendiz de Tecnología en Análisis y Desarrollo de Software (SENA), con enfoque en QA y testing de software. Disponible para contrato de aprendizaje desde ya. Frontend con React y TypeScript, IA aplicada con Python y elicitación de requisitos.',
+  exp: () =>
+    'Experiencia:\n• Desarrollador Web (Aprendiz) — SENA, Congreso Virtual de Redes de Conocimiento 2026 (jul 2026 – actualidad)\n• Desarrollador de Software — URSA Consultores (actualidad)\n• Colaborador en Desarrollo Web — FincaHouse (actualidad)',
   stack: () =>
-    'Frontend: React, TypeScript, Astro, HTML5, CSS3, Tailwind\nBackend: Python, Flask, Supabase, Docker\nIA: integración de LLMs (Groq API), Claude, Gemini, Prompt Engineering\nQA & Testing: pruebas unitarias, de integración, de sistema, regresión y UAT; Vitest + Testing Library, ESLint\nAutomatización: RPA y scripts en Python\nHerramientas: Git/GitHub, Docker, Vercel',
+    'Frontend: React, TypeScript, TanStack Start, Astro, HTML, CSS, Tailwind\nBackend: Python, Flask, Supabase, Docker\nIA: integración de LLMs (Groq API), Claude, Gemini, Prompt Engineering\nQA & Testing: unitarias, integración, E2E, funcionales, regresión, humo, UAT; pytest, Vitest, CI/CD con GitHub Actions\nMetodologías: Scrum, Kanban, GitHub Projects\nHerramientas: Git/GitHub, Vercel, Render',
   qa: () =>
-    'QA & Testing — cómo aseguro la calidad:\n• Pruebas unitarias y de integración automatizadas (Vitest + Testing Library)\n• Pruebas de sistema y de regresión antes de cada despliegue\n• Pruebas de aceptación de usuario (UAT) con quien usará el producto\n• Diseño de casos de prueba y reporte de defectos\n• Pruebas de accesibilidad (WCAG) y rendimiento (Lighthouse)\n• RPA: automatización robótica de procesos repetitivos',
+    'QA & Testing — cómo aseguro la calidad:\n• Niveles de prueba: unitarias, de integración y E2E (pytest, Vitest + Testing Library)\n• Pruebas funcionales, de regresión y de humo antes de cada despliegue\n• Pruebas de aceptación de usuario (UAT) con quien usará el producto\n• Diseño de casos de prueba y reporte de bugs\n• CI/CD con GitHub Actions\n• Pruebas de accesibilidad (WCAG) y rendimiento (Lighthouse)\n• Automatización de tareas repetitivas (RPA y flujos de trabajo)',
   projects: () =>
     '1. Congreso SENA 2026 (sitio oficial, seleccionado por convocatoria)\n2. ProAssist (asistente de IA bilingüe sobre Groq API)\n3. APPFOCUS (gestor de productividad Deep Work)\n4. Este portafolio (Astro + React + TypeScript, PWA)',
   contact: () => 'WhatsApp: +57 3209735859\nEmail: lainramirez18@gmail.com\nLinkedIn: lain-sthid-ramirez-rueda\nGitHub: Lain-Sthid-Ramirez-Rueda',

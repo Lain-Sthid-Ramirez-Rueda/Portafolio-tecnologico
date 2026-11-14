@@ -126,6 +126,8 @@
 [data-theme="light"] .project-number      { color: #CED2E6; }
 [data-theme="light"] .about-card h3       { color: #080A14; }
 [data-theme="light"] .about-card p        { color: #1E2340; }
+[data-theme="light"] .exp-role            { color: #080A14; }
+[data-theme="light"] .exp-org             { color: #1E2340; }
 [data-theme="light"] .cert-list li        { color: #1E2340; }
 [data-theme="light"] .section-title       { color: #080A14; }
 [data-theme="light"] .skill-cat-title     { color: var(--clr-primary); }
@@ -941,6 +943,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .about-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--clr-on-surface); margin-bottom: 6px; }
 .about-card p { font-size: 0.82rem; color: var(--clr-on-surface-med); line-height: 1.6; margin-bottom: var(--space-xs); }
 .about-card-badge { font-family: var(--font-mono); font-size: 0.66rem; color: var(--clr-primary); letter-spacing: 0.05em; }
+
+/* Experience list — reuses the about-card type scale and the exact colors already contrast-checked
+   for .about-card h3 / p / .about-card-badge (light-theme overrides below mirror theirs). */
+.exp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+.exp-item { display: flex; flex-direction: column; gap: 2px; padding-left: 12px; border-left: 2px solid var(--clr-border); }
+.exp-role { font-size: 0.85rem; font-weight: 600; color: var(--clr-on-surface); line-height: 1.4; }
+.exp-org  { font-size: 0.8rem; color: var(--clr-on-surface-med); line-height: 1.5; }
+.exp-date { font-family: var(--font-mono); font-size: 0.66rem; color: var(--clr-primary); letter-spacing: 0.05em; }
 
 .cert-list-new {
   display: flex;
