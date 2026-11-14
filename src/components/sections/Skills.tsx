@@ -25,8 +25,8 @@ function SkillCategoryCard({ cat, delay, filteredOut }: { cat: SkillCategory; de
       {cat.pills && (
         <div className="skill-tags">
           {cat.pills.map((pill) => (
-            <span className="skill-tag-pill" key={pill.label}>
-              <i className={pill.icon} aria-hidden="true" /> {pill.label}
+            <span className="skill-tag-pill" key={pill.labelKey ?? pill.label}>
+              <i className={pill.icon} aria-hidden="true" /> {pill.labelKey ? t(pill.labelKey) : pill.label}
             </span>
           ))}
         </div>

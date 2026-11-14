@@ -1,6 +1,6 @@
 import type { TranslationKey } from '../i18n/translations';
 
-export type SkillFilter = 'all' | 'frontend' | 'backend' | 'ai' | 'tools' | 'soft';
+export type SkillFilter = 'all' | 'frontend' | 'backend' | 'ai' | 'tools' | 'qa' | 'soft';
 
 export interface SkillBarItem {
   icon: string;
@@ -12,7 +12,8 @@ export interface SkillCategory {
   category: Exclude<SkillFilter, 'all' | 'soft'>;
   titleKey: TranslationKey;
   bars?: SkillBarItem[];
-  pills?: { icon: string; label: string }[];
+  /** `label` is shown verbatim (tool/brand names); `labelKey` is translated (ES/EN concepts). */
+  pills?: ({ icon: string; label: string; labelKey?: never } | { icon: string; labelKey: TranslationKey; label?: never })[];
 }
 
 export const skillCategories: SkillCategory[] = [
@@ -59,6 +60,22 @@ export const skillCategories: SkillCategory[] = [
       { icon: 'fa-solid fa-layer-group', label: 'Tailwind CSS' },
     ],
   },
+  {
+    category: 'qa',
+    titleKey: 'skills.cat5',
+    pills: [
+      { icon: 'fa-solid fa-circle-check', labelKey: 'qa.unit' },
+      { icon: 'fa-solid fa-puzzle-piece', labelKey: 'qa.integration' },
+      { icon: 'fa-solid fa-diagram-project', labelKey: 'qa.system' },
+      { icon: 'fa-solid fa-users', labelKey: 'qa.uat' },
+      { icon: 'fa-solid fa-shuffle', labelKey: 'qa.regression' },
+      { icon: 'fa-solid fa-pen-nib', labelKey: 'qa.cases' },
+      { icon: 'fa-solid fa-magnifying-glass-chart', labelKey: 'qa.defects' },
+      { icon: 'fa-solid fa-eye', labelKey: 'qa.a11y' },
+      { icon: 'fa-solid fa-robot', labelKey: 'qa.rpa' },
+      { icon: 'fa-solid fa-code', label: 'Vitest + Testing Library' },
+    ],
+  },
 ];
 
 export const softSkills: { icon: string; key: TranslationKey }[] = [
@@ -78,5 +95,6 @@ export const skillFilters: { filter: SkillFilter; labelKey: TranslationKey }[] =
   { filter: 'backend', labelKey: 'skills.filter_backend' },
   { filter: 'ai', labelKey: 'skills.filter_ai' },
   { filter: 'tools', labelKey: 'skills.filter_tools' },
+  { filter: 'qa', labelKey: 'skills.filter_qa' },
   { filter: 'soft', labelKey: 'skills.filter_soft' },
 ];

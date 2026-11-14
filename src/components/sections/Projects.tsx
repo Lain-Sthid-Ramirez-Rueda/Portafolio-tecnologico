@@ -7,14 +7,23 @@ import { projects } from '../../data/projects';
 function ProjectDemoEmbed({ project }: { project: (typeof projects)[number] }) {
   const { t } = useLang();
   const { openDemo } = useDialogs();
-  const [shouldLoad, setShouldLoad] = useState(() => typeof IntersectionObserver === 'undefined');
+  /* Must start `false` on BOTH the server prerender and the client's first render: deriving it from
+   * `typeof IntersectionObserver` made the static HTML (Node, no IO → iframe rendered) disagree with
+   * the browser (IO present → no iframe), a hydration mismatch (React #418) that forced React to
+   * discard and re-create the whole page on the visitor's first interaction. */
+  const [shouldLoad, setShouldLoad] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [reloadKey, setReloadKey] = useState(0);
   const frameRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = frameRef.current;
-    if (!el || typeof IntersectionObserver === 'undefined') return;
+    if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      /* Legacy-browser fallback: no lazy trigger available, load the embed right away. */
+      const id = window.setTimeout(() => setShouldLoad(true), 0);
+      return () => window.clearTimeout(id);
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry && entry.isIntersecting) {

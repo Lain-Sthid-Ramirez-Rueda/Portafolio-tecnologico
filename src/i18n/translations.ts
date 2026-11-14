@@ -10,7 +10,7 @@ export const translations = {
     'hero.role': 'Analista y Desarrollador\nde Software',
     'hero.role_short': 'Analista & Dev',
     'hero.subtitle':
-      'Convierto necesidades reales en aplicaciones web claras y fáciles de usar. Desarrollo con React y TypeScript, integro IA con Python y empiezo cada proyecto entendiendo bien los requisitos.',
+      'Convierto necesidades reales en aplicaciones web claras, fáciles de usar y bien probadas. Desarrollo con React y TypeScript, integro IA con Python, aseguro la calidad con QA y testing, y empiezo cada proyecto entendiendo bien los requisitos.',
     'hero.cta_primary': 'Ver mis proyectos',
     'hero.cta_secondary': 'Conectemos',
     'hero.download_cv': 'Descargar CV',
@@ -35,7 +35,7 @@ export const translations = {
     'about.p2':
       'Trabajo principalmente con React y TypeScript en el frontend, y con Python para integrar modelos de lenguaje (LLMs) en aplicaciones reales, como mi asistente ProAssist. Uso a diario herramientas como Claude, Gemini, GPT y Groq para acelerar el desarrollo y automatizar tareas.',
     'about.p3':
-      'Aprendo rápido y mis proyectos lo muestran: en cada uno incorporo una tecnología nueva y la llevo hasta producción, con pruebas, despliegue y documentación.',
+      'La calidad es parte de mi forma de trabajar: aplico QA y testing en todo el ciclo de vida del software, desde las pruebas unitarias y de integración hasta las pruebas de sistema y las pruebas de aceptación de usuario (UAT), y automatizo procesos repetitivos con RPA. Aprendo rápido: en cada proyecto incorporo una tecnología nueva y la llevo hasta producción, con pruebas, despliegue y documentación.',
     'about.p4':
       'Mi formación como analista es mi diferencial: antes de escribir código, escucho a quien va a usar el producto y traduzco sus necesidades en requisitos claros. Así trabajo con el comité del Congreso y así abordo cualquier proyecto en equipo.',
     'about.tag1': 'Frontend · React',
@@ -43,6 +43,7 @@ export const translations = {
     'about.tag3': 'En proceso · Full-Stack',
     'about.tag4': 'UI/UX Design',
     'about.tag5': 'Open Source',
+    'about.tag6': 'QA & Testing',
     'about.edu_title': 'Educación',
     'about.edu_desc': 'Tecnología en Análisis y Desarrollo de Software — SENA',
     'about.edu_status': 'En curso · 2027',
@@ -65,12 +66,14 @@ export const translations = {
     'skills.cat2': 'Backend & Scripting',
     'skills.cat3': 'IA & Automatización',
     'skills.cat4': 'Herramientas & Entorno',
+    'skills.cat5': 'QA, Testing & RPA',
     'skills.soft_title': 'Habilidades Blandas',
     'skills.filter_all': 'Todos',
     'skills.filter_frontend': 'Frontend',
     'skills.filter_backend': 'Backend',
     'skills.filter_ai': 'IA & Automatización',
     'skills.filter_tools': 'Herramientas',
+    'skills.filter_qa': 'QA & Testing',
     'skills.filter_soft': 'Soft Skills',
 
     'soft.1': 'Elicitación de Requisitos',
@@ -81,6 +84,16 @@ export const translations = {
     'soft.6': 'Redacción Técnica',
     'soft.7': 'Atención al Detalle',
     'soft.8': 'Comunicación Efectiva',
+
+    'qa.unit': 'Pruebas Unitarias',
+    'qa.integration': 'Pruebas de Integración',
+    'qa.system': 'Pruebas de Sistema',
+    'qa.uat': 'Pruebas de Aceptación (UAT)',
+    'qa.regression': 'Pruebas de Regresión',
+    'qa.cases': 'Diseño de Casos de Prueba',
+    'qa.defects': 'Reporte y Seguimiento de Defectos',
+    'qa.a11y': 'Pruebas de Accesibilidad (WCAG)',
+    'qa.rpa': 'RPA · Automatización Robótica de Procesos',
 
     'projects.label': 'Proyectos',
     'projects.title': 'Lo que he construido',
@@ -101,7 +114,7 @@ export const translations = {
     'contact.label': 'Contacto',
     'contact.title': 'Transformemos ideas\nen soluciones.',
     'contact.desc':
-      'Busco oportunidades como desarrollador frontend o en equipos que construyan productos con IA, incluida mi etapa productiva. Si tienes un proyecto o una oportunidad, escríbeme.',
+      'Busco oportunidades como desarrollador frontend, analista QA / tester o en equipos que construyan productos con IA y automatización (RPA), incluida mi etapa productiva. Si tienes un proyecto o una oportunidad, escríbeme.',
     'contact.cta': 'Contáctame ahora',
     'contact.copied_email': '¡Correo copiado al portapapeles! 📋',
     'contact.copied_phone': '¡WhatsApp copiado al portapapeles! 📋',
@@ -149,7 +162,7 @@ export const translations = {
     'hero.role': 'Software Analyst\n& Developer',
     'hero.role_short': 'Analyst & Dev',
     'hero.subtitle':
-      'I turn real needs into clear, easy-to-use web applications. I build with React and TypeScript, integrate AI with Python, and start every project by getting the requirements right.',
+      'I turn real needs into clear, easy-to-use, well-tested web applications. I build with React and TypeScript, integrate AI with Python, ensure quality through QA and testing, and start every project by getting the requirements right.',
     'hero.cta_primary': 'View my projects',
     'hero.cta_secondary': "Let's connect",
     'hero.download_cv': 'Download CV',
@@ -174,7 +187,7 @@ export const translations = {
     'about.p2':
       'I work mainly with React and TypeScript on the frontend, and with Python to integrate large language models (LLMs) into real applications, such as my ProAssist assistant. I use tools like Claude, Gemini, GPT, and Groq daily to speed up development and automate tasks.',
     'about.p3':
-      'I learn fast, and my projects show it: in each one I pick up a new technology and take it all the way to production, with tests, deployment, and documentation.',
+      'Quality is part of how I work: I apply QA and testing across the whole software lifecycle, from unit and integration tests to system testing and user acceptance testing (UAT), and I automate repetitive processes with RPA. I learn fast: in each project I pick up a new technology and take it all the way to production, with tests, deployment, and documentation.',
     'about.p4':
       'My analyst training is what sets me apart: before writing code, I listen to the people who will use the product and turn their needs into clear requirements. That is how I work with the Congress committee, and how I approach any team project.',
     'about.tag1': 'Frontend · React',
@@ -182,6 +195,7 @@ export const translations = {
     'about.tag3': 'In Progress · Full-Stack',
     'about.tag4': 'UI/UX Design',
     'about.tag5': 'Open Source',
+    'about.tag6': 'QA & Testing',
     'about.edu_title': 'Education',
     'about.edu_desc': 'Software Analysis and Development Technology — SENA',
     'about.edu_status': 'In progress · 2027',
@@ -204,12 +218,14 @@ export const translations = {
     'skills.cat2': 'Backend & Scripting',
     'skills.cat3': 'AI & Automation',
     'skills.cat4': 'Tools & Environment',
+    'skills.cat5': 'QA, Testing & RPA',
     'skills.soft_title': 'Soft Skills',
     'skills.filter_all': 'All',
     'skills.filter_frontend': 'Frontend',
     'skills.filter_backend': 'Backend',
     'skills.filter_ai': 'AI & Automation',
     'skills.filter_tools': 'Tools',
+    'skills.filter_qa': 'QA & Testing',
     'skills.filter_soft': 'Soft Skills',
 
     'soft.1': 'Requirements Elicitation',
@@ -220,6 +236,16 @@ export const translations = {
     'soft.6': 'Technical Writing',
     'soft.7': 'Attention to Detail',
     'soft.8': 'Effective Communication',
+
+    'qa.unit': 'Unit Testing',
+    'qa.integration': 'Integration Testing',
+    'qa.system': 'System Testing',
+    'qa.uat': 'User Acceptance Testing (UAT)',
+    'qa.regression': 'Regression Testing',
+    'qa.cases': 'Test Case Design',
+    'qa.defects': 'Defect Reporting & Tracking',
+    'qa.a11y': 'Accessibility Testing (WCAG)',
+    'qa.rpa': 'RPA · Robotic Process Automation',
 
     'projects.label': 'Projects',
     'projects.title': 'What I have built',
@@ -240,7 +266,7 @@ export const translations = {
     'contact.label': 'Contact',
     'contact.title': 'Let us turn ideas\ninto solutions.',
     'contact.desc':
-      'I am looking for opportunities as a frontend developer or on teams building AI products, including my SENA internship. If you have a project or an opportunity, get in touch.',
+      'I am looking for opportunities as a frontend developer, QA analyst / tester, or on teams building AI and automation (RPA) products, including my SENA internship. If you have a project or an opportunity, get in touch.',
     'contact.cta': 'Contact me now',
     'contact.copied_email': 'Email copied to clipboard! 📋',
     'contact.copied_phone': 'WhatsApp copied to clipboard! 📋',

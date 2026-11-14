@@ -38,13 +38,23 @@ const intentDirective: ClientDirective = (load, _opts, el) => {
 
   // A deep link (#projects) or a restored scroll position means the visitor is already past the
   // hero — hydrate right away so scroll-reveal content isn't left waiting for another gesture.
-  if (location.hash || window.scrollY > 0) {
+  if (location.hash) {
     void hydrate();
     return;
   }
 
   document.addEventListener('click', recordClick, true);
   for (const type of INTENT_EVENTS) window.addEventListener(type, hydrate, listenerOpts);
+
+  // Restored scroll position: read `scrollY` on the next frame, not here. This runs while the HTML
+  // is still being parsed, and reading `scrollY` at that point forced a synchronous layout of the
+  // whole page before the first paint (~38ms of main-thread work in a Lighthouse trace). The
+  // `scroll` listener above also catches a restoration that happens later.
+  // NOTE: this file is inlined into the HTML — editing it changes its CSP sha256 hash, which must
+  // be recomputed in index.astro, vercel.json and _headers (see docs/explanation-IA.md §7.6).
+  requestAnimationFrame(() => {
+    if (window.scrollY > 0) void hydrate();
+  });
 
   const prefetch = () => {
     for (const attr of ['component-url', 'renderer-url']) {

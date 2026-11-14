@@ -22,3 +22,11 @@ This file documents the technical skills and proficiencies implemented and showc
 - **VS Code**: Advanced IDE setups and workflows.
 - **Google Cloud / Linux**: Deployment and server management.
 - **Requirements Elicitation**: Specialized in extracting, organizing, and executing software requirements.
+
+## QA, Testing & RPA
+- **Unit / Integration / System Testing**: Automated unit and integration tests (Vitest + Testing Library in this repo), system-level verification before each deploy.
+- **Regression Testing**: Re-running the automated suite and Lighthouse audits after every change to ensure nothing previously working breaks.
+- **User Acceptance Testing (UAT)**: Validating deliverables with the end users / stakeholders (e.g. the SENA Congress organizing committee) against agreed requirements.
+- **Test Case Design & Defect Reporting**: Writing test cases from requirements and documenting/tracking defects.
+- **Accessibility Testing (WCAG)**: Contrast, keyboard focus and screen-reader checks, plus Lighthouse/axe audits.
+- **RPA (Robotic Process Automation)**: Automating repetitive, rule-based business processes.

@@ -53,4 +53,18 @@ describe('App interactions', () => {
     expect(document.querySelector('[data-category="backend"]')).toHaveClass('filtered-out');
     expect(document.querySelector('[data-category="frontend"]')).not.toHaveClass('filtered-out');
   });
+
+  it('shows the QA, Testing & RPA category with translated pills when filtered', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'QA & Testing' }));
+
+    const qa = document.querySelector('[data-category="qa"]');
+    expect(qa).not.toHaveClass('filtered-out');
+    expect(document.querySelector('[data-category="frontend"]')).toHaveClass('filtered-out');
+    expect(qa).toHaveTextContent('Pruebas Unitarias');
+    expect(qa).toHaveTextContent('Pruebas de Aceptación (UAT)');
+    expect(qa).toHaveTextContent('RPA');
+  });
 });

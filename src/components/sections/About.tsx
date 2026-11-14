@@ -34,6 +34,7 @@ export function About() {
               </span>
               <span className="tag">{t('about.tag4')}</span>
               <span className="tag">{t('about.tag5')}</span>
+              <span className="tag">{t('about.tag6')}</span>
             </div>
           </div>
 
