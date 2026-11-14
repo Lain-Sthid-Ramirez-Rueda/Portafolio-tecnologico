@@ -382,3 +382,43 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
     - **Terminal IA:** los comandos `bio`, `stack`, `projects` y `ai` usan la misma información actualizada.
 
     **Verificación:** las claves de traducción ES/EN siguen coincidiendo (113/113) y los datos de proyectos se cargan sin errores. No se pudo correr `npm run build` ni `npm test` en este entorno (sin acceso al registro de npm): córrelos antes de fusionar.
+
+
+39. **Perfil QA, Testing y RPA + arreglo de un error oculto (Fase 24):**
+
+    **Lo que me pediste:** actualizar tu perfil con QA, testing, pruebas unitarias, de integración y de sistema, UAT y RPA, con mucho cuidado de no dañar los puntajes de Google (PageSpeed).
+
+    **Qué cambió:**
+    - **Nueva tarjeta en Habilidades: "QA, Testing & RPA".** Ocupa todo el ancho, debajo de las otras cuatro, con 10 etiquetas: Pruebas Unitarias, de Integración, de Sistema, de Aceptación (UAT), de Regresión, Diseño de Casos de Prueba, Reporte y Seguimiento de Defectos, Pruebas de Accesibilidad (WCAG), RPA y Vitest + Testing Library. Cambian a inglés cuando el visitante cambia de idioma.
+    - **Nuevo botón de filtro "QA & Testing"** para que un reclutador vea solo esa parte.
+    - **"Sobre mí":** el tercer párrafo ahora explica que aplicas QA y testing en todo el ciclo del software y que automatizas procesos con RPA. Se agregó la etiqueta "QA & Testing".
+    - **Inicio y Contacto:** el subtítulo menciona que aseguras la calidad con QA y testing; en Contacto dice que buscas oportunidades también como analista QA / tester y en automatización (RPA).
+    - **Terminal IA:** nuevo comando `qa` que explica cómo aseguras la calidad.
+    - **Google y vistas previas:** la descripción, las palabras clave y los datos estructurados ahora incluyen QA, testing, UAT y RPA, para que aparezcas cuando busquen esos perfiles.
+    - Usé solo íconos que tu página ya tenía cargados, así que no pesa ni un byte más en fuentes.
+
+    **Error oculto que encontré y arreglé:** la página tenía un error invisible (ya existía antes): la versión estática que se publica y la versión que arma el navegador no coincidían en el visor de proyectos. Por eso, en la primera interacción del visitante, React tiraba toda la página y la volvía a construir (trabajo extra para el celular), y además empezaba a cargar los sitios del Congreso y de ProAssist aunque el visitante todavía no hubiera llegado a Proyectos. Ahora ambas versiones coinciden: cero errores en la consola y esos sitios solo cargan cuando el visitante baja hasta Proyectos.
+
+    **Verificación:** Lighthouse en celular 99 de rendimiento y en computador 100; accesibilidad y SEO en 100 en ambos. "Buenas prácticas" sale 96 solo en mi entorno de prueba porque aquí está bloqueado el script de Vercel Analytics (en tu sitio real no pasa). 14/14 pruebas automáticas pasan (agregué una para el filtro nuevo), la build compila sin errores, y revisé capturas en computador y celular, modo oscuro y claro.
+
+    **Lo que no pude hacer:** no pude abrir tu LinkedIn desde este entorno (está bloqueado por la red), así que usé lo que me contaste y tu CV actual, sin inventar empresas, fechas ni herramientas. Tus CV en PDF todavía no tienen la sección de QA.
+
+
+40. **PageSpeed en 100 también en celular (Fase 25):**
+
+    **Lo que me pediste:** que la página siga rápida y que PageSpeed quede en 100.
+
+    **Qué encontré:** en celular el rendimiento se quedaba en 99. No era el procesador sino la red simulada: el navegador descubría tarde las fuentes de letra (después de leer todo el estilo) y Google las contaba como "bloqueantes" para la primera pintura.
+
+    **Qué cambié:**
+    - **Fuentes 46% más livianas, sin cambiar cómo se ven:** quité de los archivos de fuentes los grosores que tu página nunca usa (tu CSS ya solo pedía de 400 a 700), los caracteres de otros idiomas y funciones tipográficas que no usas (como fracciones). Se conservan todas las letras del español y del inglés (tildes, ñ, ¿, ¡, comillas, guiones, flechas, €). Comparé capturas completas antes y después, píxel por píxel: no hay diferencia visible.
+    - **Las fuentes del primer pantallazo se piden desde el inicio** (precarga), en paralelo con la página, en vez de esperar a que el navegador las descubra.
+    - **Quité un cálculo innecesario antes de la primera pintura:** el script que activa la página medía la posición del scroll mientras la página aún se estaba leyendo, lo que obligaba a calcular todo el diseño antes de tiempo. Ahora lo mide un instante después. Como ese script va dentro del HTML, actualicé su "huella" de seguridad (CSP) en los 3 archivos donde está (`index.astro`, `vercel.json` y `_headers`). Es el mismo detalle que una vez dejó la página sin funcionar; esta vez lo comprobé en un navegador real.
+    - Probé otras dos ideas que no mejoraban nada y las deshice para no tocar lo que no hacía falta.
+
+    **Resultado (3 mediciones de cada uno):** celular 100/100/100 (antes 99) y computador 100/100/100; accesibilidad y SEO en 100. El pequeño salto del Hero en computador desapareció (CLS 0). "Buenas prácticas" sale 96 solo en mi entorno porque aquí se bloquea Vercel Analytics; en tu sitio real no pasa.
+
+    **Comprobado en navegador real (computador y celular):** la página se activa al interactuar; los enlaces directos como `#projects` funcionan; recargar a mitad de página funciona; el botón de CV responde aunque se toque antes de que la página termine de activarse; el filtro de QA funciona; cero errores.
+
+    **Importante:** no pude abrir tu enlace de PageSpeed ni tu sitio publicado desde aquí (la red de este entorno los bloquea), así que medí con el mismo motor de Google sobre la versión de producción. Cuando Vercel publique, confírmalo en pagespeed.web.dev. Ten en cuenta que PageSpeed varía un poco entre corridas.
+

@@ -1097,6 +1097,25 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   box-shadow: 0 8px 40px color-mix(in srgb, var(--clr-primary) 18%, transparent);
 }
 
+/* 5th card (QA, Testing & RPA): spans the full row so the 2-col bento stays balanced (2+2+1→full) */
+.skill-category:nth-child(5) { grid-column: 1 / -1; }
+
+/* QA card — decorative watermark check icon (same treatment as the IA card's robot) */
+.skill-category:nth-child(5)::before {
+  content: "\f058"; /* fa-circle-check unicode (already in the self-hosted subset) */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  bottom: -0.5rem;
+  right: 1rem;
+  font-size: 6rem;
+  color: var(--clr-primary);
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
 /* 4th card accent: teal left-border highlight */
 .skill-category:nth-child(4) {
   border-left: 3px solid var(--clr-primary);
@@ -2142,6 +2161,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   .skill-category:nth-child(2) { grid-column: span 1; }
   .skill-category:nth-child(3) { grid-column: span 1; }
   .skill-category:nth-child(4) { grid-column: span 1; border-left: 3px solid var(--clr-primary); }
+  .skill-category:nth-child(5) { grid-column: 1 / -1; }
 
   /* Navigation for Tablet & Mobile: Use Bottom Bar */
   .bottom-bar { display: flex; align-items: center; justify-content: space-around; }
@@ -2161,6 +2181,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   /* IA card: reset desktop gradient override to avoid edge artifact on mobile */
   .skill-category:nth-child(3) { background: var(--clr-surface-2); border-color: var(--clr-border); }
   .skill-category:nth-child(3)::before { font-size: 4rem; bottom: -0.25rem; right: 0.5rem; }
+  .skill-category:nth-child(5)::before { font-size: 4rem; bottom: -0.25rem; right: 0.5rem; }
   .projects-grid { grid-template-columns: 1fr; }
   .about-aside   { grid-template-columns: 1fr; }
   .soft-grid     { grid-template-columns: repeat(2, 1fr); }
