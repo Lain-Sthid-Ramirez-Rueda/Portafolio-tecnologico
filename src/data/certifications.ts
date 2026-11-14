@@ -42,4 +42,14 @@ export const certifications: Certification[] = [
     issuerKey: 'about.cert2_issuer',
     pdfUrl: null,
   },
+  {
+    id: 'microsoft-ai',
+    icon: 'fa-solid fa-brain',
+    iconBg: 'cert-ai',
+    typeKey: 'about.cert4_type',
+    badgeVariant: 'cert',
+    titleKey: 'about.cert4_title',
+    issuerKey: 'about.cert4_issuer',
+    pdfUrl: null,
+  },
 ];

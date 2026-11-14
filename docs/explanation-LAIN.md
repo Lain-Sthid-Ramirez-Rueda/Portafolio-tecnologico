@@ -422,3 +422,23 @@ Estos archivos están sueltos en la raíz del proyecto porque los navegadores, G
 
     **Importante:** no pude abrir tu enlace de PageSpeed ni tu sitio publicado desde aquí (la red de este entorno los bloquea), así que medí con el mismo motor de Google sobre la versión de producción. Cuando Vercel publique, confírmalo en pagespeed.web.dev. Ten en cuenta que PageSpeed varía un poco entre corridas.
 
+
+41. **Tu página sincronizada con tu CV actual (Fase 26):**
+
+    **Lo que me pediste:** revisar si tu CV traía QA y usar tu LinkedIn.
+
+    **Respuesta:** sí, tu CV trae QA. Tu enlace de LinkedIn es el mismo que la página ya usaba; lo que viene después del `?` solo indica que lo compartiste desde el celular, así que no hace falta agregarlo.
+
+    **Qué cambié para que la página diga lo mismo que tu CV:**
+    - **Nueva tarjeta "Experiencia"** en "Sobre mí": Desarrollador Web (Aprendiz) en el SENA para el Congreso 2026 (jul 2026 – actualidad), Desarrollador de Software en URSA Consultores y Colaborador en Desarrollo Web en FincaHouse.
+    - **"Sobre mí":** ahora dice que eres aprendiz con enfoque en QA, disponible para contrato de aprendizaje desde ya; menciona URSA y FincaHouse, los tipos de prueba de tu CV (unitarias, integración, E2E, funcionales, regresión, humo, reporte de bugs, CI/CD con GitHub Actions) y Scrum/Kanban.
+    - **Educación:** etapa lectiva hasta marzo de 2027 y productiva de marzo a septiembre de 2027. **Idiomas:** inglés B1.
+    - **Certificaciones:** emisor correcto (Fundación Carlos Slim, diplomado de 453 h), tus cursos de Anthropic y la nueva de Microsoft (AI Skills Fest 2026).
+    - **Habilidades:** se sumaron E2E, funcionales, humo, pytest, CI/CD (GitHub Actions), Supabase, Docker, Vercel/Render, Scrum/Kanban y GitHub Projects.
+    - **Google:** el título de la pestaña ahora es "Desarrollador de Software · QA y Testing"; la descripción y los datos estructurados incluyen tu experiencia y certificaciones.
+    - **CV descargables:** el de español ahora es exactamente el que me enviaste. El de inglés es una traducción fiel con el mismo diseño, en una página y con enlaces que funcionan.
+
+    **Ojo:** tu CV no menciona UAT ni RPA, pero en la página los dejé porque me los pediste. Si quieres que todo coincida, agrégalos a tu CV y LinkedIn, o dime y los quito.
+
+    **Verificación:** ningún texto cortado ni desbordes en 5 tamaños de pantalla y en los dos idiomas; modo claro y oscuro revisados; pruebas, lint y build sin errores. Comparé el rendimiento contra la versión ya publicada, de forma alternada: dan igual, así que el contenido nuevo no hace la página más lenta.
+

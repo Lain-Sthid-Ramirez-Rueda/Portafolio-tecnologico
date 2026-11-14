@@ -1,23 +1,31 @@
 # Lain Sthid Ramirez Rueda
 
-> Analista y Desarrollador de Software en formación en el SENA (Colombia; Tecnología,
-> finaliza en 2027). Frontend con React y TypeScript, QA y testing (pruebas unitarias, de
-> integración, de sistema, regresión y UAT), RPA, IA aplicada con Python y elicitación
+> Aprendiz de Tecnología en Análisis y Desarrollo de Software en el SENA (Colombia; etapa
+> lectiva hasta marzo de 2027, productiva marzo–septiembre de 2027), con enfoque en QA y
+> testing de software y disponible para contrato de aprendizaje. Frontend con React y TypeScript, QA y testing (pruebas unitarias, de
+> integración, E2E, funcionales, regresión, humo y UAT), CI/CD, IA aplicada con Python y elicitación
 > de requisitos. Este es un
 > portafolio de página única (SPA) con selector de idioma ES/EN en el propio sitio; todas
 > las secciones viven en la misma URL bajo anclas.
 
 ## Perfil
 - Rol: Analista y Desarrollador de Software en formación. Desarrollador del sitio oficial del
-  Congreso Virtual de Redes de Conocimiento 2026 del SENA (seleccionado por convocatoria).
-- Formación: SENA — Diplomado en Fundamentos de Full Stack, certificación Desarrollador
-  Front-End, certificación de IA (Anthropic).
+  Congreso Virtual de Redes de Conocimiento 2026 del SENA (seleccionado por convocatoria,
+  jul 2026 – actualidad).
+- Experiencia actual: Desarrollador de Software en URSA Consultores (plataforma interna de
+  verificación de antecedentes, https://app.ursaconsultores.com) y Colaborador en Desarrollo
+  Web en FincaHouse (portal inmobiliario, https://fincahouse.com).
+- Formación: SENA — Tecnología en Análisis y Desarrollo de Software (ADSO). Fundación Carlos
+  Slim — Diplomado en Fundamentos de Full Stack (453 h) y Desarrollador Front-End. Anthropic —
+  Claude Code in Action, Introduction to Subagents. Microsoft — AI Skills Fest 2026.
+- Idiomas: español (nativo), inglés (B1).
 - Áreas: React, TypeScript, Astro, Python, Flask, Supabase, Docker, Groq API, Prompt
   Engineering, Diseño UI/UX, Elicitación de Requisitos, Git.
-- QA y Testing: pruebas unitarias, de integración, de sistema y de regresión; pruebas de
-  aceptación de usuario (UAT); diseño de casos de prueba; reporte de defectos; pruebas de
-  accesibilidad (WCAG); Vitest + Testing Library. Automatización: RPA (automatización
-  robótica de procesos).
+- QA y Testing: pruebas unitarias, de integración y E2E; funcionales, de regresión y de humo;
+  pruebas de aceptación de usuario (UAT); diseño de casos de prueba; reporte de bugs; pruebas
+  de accesibilidad (WCAG); pytest, Vitest + Testing Library; CI/CD con GitHub Actions.
+  Automatización de flujos de trabajo (RPA).
+- Metodologías: Scrum, Kanban, GitHub Projects.
 - Contacto: lainramirez18@gmail.com · https://wa.me/573209735859
 - GitHub: https://github.com/Lain-Sthid-Ramirez-Rueda
 - LinkedIn: https://www.linkedin.com/in/lain-sthid-ramirez-rueda
